@@ -3,3 +3,6 @@
 .blackOverLay{
     background: rgba(0, 0, 0, 0.7);
 }
+.imageOverlay{
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), 85%, rgba(0, 0, 0, 1));
+}
