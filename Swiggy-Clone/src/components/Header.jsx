@@ -52,7 +52,7 @@ const Header = () => {
   return (
     <>
       <div
-        className="blackOverLay w-full h-full fixed duration-300 "
+        className="blackOverLay w-full h-full fixed duration-300 z-50"
         onClick={removeOverLay}
         style={{
           opacity: toggle ? 1 : 0,
@@ -61,7 +61,7 @@ const Header = () => {
       >
         {/* === SideBar === */}
         <div
-          className="max-w-[400px] w-full h-full bg-white absolute transition-all duration-500 ease-in-out 2s"
+          className="max-w-[400px] w-full h-full bg-white absolute transition-all duration-500 ease-in-out 2s "
           style={{
             left: toggle ? "0" : "-100%",
           }}
@@ -69,7 +69,7 @@ const Header = () => {
         ></div>
       </div>
 
-      <header className="p-[15px] shadow-xl w-full ">
+      <header className="p-[15px] shadow-xl w-full sticky top-0 z-10 bg-white">
         <div className="mx-auto max-w-[1080px]  flex items-center justify-between">
           <div className="flex ">
             <div className="w-[50px] bg-white mx-6">
@@ -90,7 +90,7 @@ const Header = () => {
             </div>
           </div>
 
-          <nav className="flex list-none gap-8 font-semibold text-gray-400 mx-4">
+          <nav className="hidden md:flex list-none gap-8 font-semibold text-gray-400 mx-4">
             {link.map((item, index) => {
               return (
                 <li

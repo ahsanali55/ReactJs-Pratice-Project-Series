@@ -21,21 +21,23 @@ const TopRest = () => {
     };
   }, []);
 
-  const slideRight = () => {
-    
-  }
-
   const slideleft = () => {
+    setCount(prev => Math.max(prev - 3, 0))
 
   }
+  const slideRight = () => {
+    setCount(prev => Math.min(prev + 3, 8))
+
+  }
+  
 
   return (
     <>
-      <div>
-        <div className="max-w-[1080px] mx-auto ">
-          {/* top div */}
+      <section className="w-full">
+        <div className=" w-full max-w-[1080px] mx-auto px-4 md:px-0">
+          {/* top div */} 
           <div className="flex justify-between items-center">
-            <h1>Top restaurant chains in Jodhpur</h1>
+            <h1 className="font-bold md:text-[25px] text-[20px]">Top restaurant chains in Jodhpur</h1>
             <div className="flex space-x-4">
               <div onClick={slideleft}
               className="w-10 h-10 bg-[#e2e2e7] rounded-full flex items-center justify-center">
@@ -48,16 +50,16 @@ const TopRest = () => {
             </div>
           </div>
           {/* Bottom div */}
-          <div className="flex grow space-x-6 shrink-0 overflow-hidden mt-4">
+          <div className="flex grow space-x-6 shrink-0 overflow-hidden mt-4 w-full" >
             {data.map((item, index) => {
               return (
-               <Card item={item} key={index} />
-               
+               <Card item={item} key={index} count={count} />
               );
             })}
           </div>
+      <hr className="mb-2  border-gray-200 " />
         </div>
-      </div>
+      </section>
     </>
   );
 };

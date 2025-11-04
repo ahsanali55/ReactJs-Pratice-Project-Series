@@ -58,7 +58,7 @@ const Category = () => {
 
           {/* === Bottom Div === */}
 
-          <div className="flex  overflow-hidden">
+          <div className="flex  overflow-hidden z-0">
             {categories.map((item, index) => {
               return (
                 <div
@@ -73,8 +73,8 @@ const Category = () => {
               );
             })}
           </div>
-        </div>
         <hr className="my-6 border border-gray-100"/>
+        </div>
       </div>
     </>
   );
