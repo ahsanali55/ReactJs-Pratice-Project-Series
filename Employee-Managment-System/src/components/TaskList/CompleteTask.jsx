@@ -1,6 +1,6 @@
 import React from 'react'
 
-const AuthContext = () => {
+const CompleteTask = () => {
   return (
     <div>
       
@@ -8,4 +8,4 @@ const AuthContext = () => {
   )
 }
 
-export default AuthContext
+export default CompleteTask
