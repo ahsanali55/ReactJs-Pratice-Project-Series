@@ -1,12 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
+import { setLocalStorage } from "../../utils/LocalStorage";
 
 const Header = () => {
+  const [username, setusername] = useState("");
+  // if (!data){
+  //   setusername("Admin")
+  // }else{
+  //   setusername(data.firstName)
+  // }
+
+  const logOutUser = () => { 
+    localStorage.setItem("loggedInUser", '');
+    window.location.reload();
+  }
+
   return (
     <div className="flex items-center justify-between text-white mb-4">
       <h1 className="text-2xl font-medium">
-        Hello <br /> <span className="text-3xl font-semibold">Ahsan 👋</span>{" "}
+        Hello <br /> <span className="text-3xl font-semibold">Hello👋</span>
       </h1>
-      <button className="bg-red-500 text-white text-lg font-bold px-5 py-2 ">Log Out</button>
+      <button className="bg-red-500 text-white text-lg font-bold px-5 py-2 "onClick={logOutUser} >Log Out</button>
     </div>
   );
 };
