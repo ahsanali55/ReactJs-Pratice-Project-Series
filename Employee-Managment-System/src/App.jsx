@@ -9,54 +9,40 @@ import { AuthContext } from "./context/AuthProvider";
 function App() {
   const [user, setUser] = useState(null);
   const [loggedInUserData, setloggedInUserData] = useState(null);
-  const AuthData = useContext(AuthContext);
-  // console.log("Authdata", AuthData);
-  // console.log("User ", user);
+  const [userData, setUserData] = useContext(AuthContext);
+
 
   useEffect(() => {
-    if (AuthData){
+ 
       const loggedInUser = localStorage.getItem("loggedInUser");
-      if(loggedInUser){
-        console.log("loggedInUser, ", loggedInUser)
-        const userData = JSON.parse(loggedInUser)
-        console.log("userData, ", userData)
-        setUser(userData.role);
-        setloggedInUserData(userData.data)
-      }else{
-        setUser(null)
-        console.log("There's not any employee or admin")
-      }
+      if (loggedInUser) {
+        const user = JSON.parse(loggedInUser);
+        setUser(user.role);
+        setloggedInUserData(user.data);
+    
     }
-
-  }, [AuthData])
+  }, []);
 
   const handleLogin = (email, password) => {
-    console.log(email, password);
-    // console.log(AuthData.userData.admin)
 
-    if (
-      AuthData &&
-      AuthData.userData.admin.find(
-        (item) => item.email === email && item.password === password
-      )
-    ) {
-      console.log("This is Admin");
+    if ("admin@example.com" === email && "123" === password) {
       const loggedInUser = { role: "admin" };
       localStorage.setItem("loggedInUser", JSON.stringify(loggedInUser));
       // ⚡ React state updates immediately
       setUser(loggedInUser.role);
-    } else if (AuthData) {
-      const employee = AuthData.userData.employees.find(
+    } else if (userData) {
+      const employee = userData.employees.find(
         (item) => item.email === email && item.password === password
       );
-
-      console.log(employee);
-      setloggedInUserData(employee);
-
-      const loggedInUser = { role: "employee", data: employee };
-      localStorage.setItem("loggedInUser", JSON.stringify(loggedInUser));
-      // ⚡ React state updates immediately
-      setUser(loggedInUser.role);
+      if (employee) {
+      
+        setloggedInUserData(employee);
+        
+        const loggedInUser = { role: "employee", data: employee };
+        localStorage.setItem("loggedInUser", JSON.stringify(loggedInUser));
+        // ⚡ React state updates immediately
+        setUser(loggedInUser.role);
+      }
     } else {
       alert("Invalid Credentails");
     }
@@ -66,9 +52,9 @@ function App() {
     <>
       {!user ? <Login handleLogin={handleLogin} /> : ""}
       {user === "admin" ? (
-        <AdminDashboard />
+        <AdminDashboard changeUser={setUser} />
       ) : user === "employee" ? (
-        <EmployeeDashboard data={loggedInUserData} />
+        <EmployeeDashboard changeUser={setUser} data={loggedInUserData} />
       ) : null}
     </>
   );

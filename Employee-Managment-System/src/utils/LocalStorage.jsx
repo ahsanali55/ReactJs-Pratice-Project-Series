@@ -47,7 +47,7 @@ const employees = [
         category: "Testing",
       },
     ],
-    taskCount: { active: 2, newTask: 1, completed: 1, failed: 1 },
+    taskCount: { active: 2, newTask: 1, completed: 1, failed: 0 },
   },
   {
     id: 2,
@@ -86,7 +86,7 @@ const employees = [
         category: "Marketing",
       },
     ],
-    taskCount: { active: 2, newTask: 1, completed: 1, failed: 1 },
+    taskCount: { active: 2, newTask: 1, completed: 1, failed: 0 },
   },
   {
     id: 3,
@@ -125,7 +125,7 @@ const employees = [
         category: "Code Review",
       },
     ],
-    taskCount: { active: 2, newTask: 1, completed: 1, failed: 1 },
+    taskCount: { active: 2, newTask: 1, completed: 1, failed: 0 },
   },
   {
     id: 4,
@@ -164,7 +164,7 @@ const employees = [
         category: "Backend",
       },
     ],
-    taskCount: { active: 2, newTask: 1, completed: 1, failed: 1 },
+    taskCount: { active: 2, newTask: 1, completed: 1, failed: 0 },
   },
   {
     id: 5,
@@ -203,7 +203,7 @@ const employees = [
         category: "Analysis",
       },
     ],
-    taskCount: { active: 2, newTask: 1, completed: 1, failed: 1 },
+    taskCount: { active: 2, newTask: 1, completed: 1, failed: 0 },
   },
 ];
 
@@ -211,7 +211,7 @@ const employees = [
 export const setLocalStorage = () => {
   localStorage.setItem('employees', JSON.stringify(employees));
   localStorage.setItem('admin', JSON.stringify(admin))
-  console.log("data set at local storage")
+
 }
 export const getLocalStorage = () => {
   const employees = JSON.parse(localStorage.getItem("employees"));
