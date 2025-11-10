@@ -1,0 +1,7 @@
+
+body{
+    background-color: hsl(248, 85%, 13%);
+    font-family: "DM Sans", sans-serif;
+    color: white;
+    overflow-x: hidden;
+}
