@@ -1,22 +1,22 @@
-import { useState } from 'react'
-import './App.css'
-import NavBar from './components/NavBar'
-import WeatherStore from './store/WeatherStore'
-import SearchBar from './components/SearchBar'
-import WholeDetail from './components/weatherWholeDetail/WholeDetail'
+import { useState } from "react";
+import "./App.css";
+import NavBar from "./components/headerSection/NavBar";
+import WeatherStore from "./store/WeatherStore";
+import SearchBar from "./components/searchBarSection/SearchBar";
+import WholeDetail from "./components/weatherWholeDetail/WholeDetail";
+import FetchWeatherApi from "./store/FetchWeatherApi";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-    <WeatherStore>
-     <NavBar />
-    </WeatherStore>
-    <SearchBar />
-    <WholeDetail />
-    </>
-  )
+    <div className="w-full relative">
+      <WeatherStore>
+    <FetchWeatherApi />
+        <NavBar />
+        <SearchBar />
+        <WholeDetail />
+      </WeatherStore>
+    </div>
+  );
 }
 
-export default App
+export default App;

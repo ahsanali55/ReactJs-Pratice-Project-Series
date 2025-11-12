@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import DropDown from "./DropDown";
-import { weatherContext } from "../store/WeatherStore";
+import { weatherContext } from "../../store/WeatherStore";
 
 const NavBar = () => {
   const { isOpenDropDown, dispatch } = useContext(weatherContext);
@@ -32,7 +32,7 @@ const NavBar = () => {
 
       {isOpenDropDown && (
         <div
-          className="w-full h-full absolute top-0 z-0"
+          className="w-full h-full absolute top-0 z-10"
           onClick={() => dispatch({ type: "windowClick" })}
         ></div>
       )}
