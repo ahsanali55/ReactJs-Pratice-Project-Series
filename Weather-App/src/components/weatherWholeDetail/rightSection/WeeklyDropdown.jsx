@@ -11,10 +11,10 @@ const WeeklyDropdown = () => {
 
   return (
     <div
-      className={`absolute p-2 top-15  right-3 bg-[#22263F] border border-gray-500 rounded-lg w-full max-w-[200px] transition-all  ease-out z-30 ${
+      className={`absolute p-2 top-19  right-6 bg-[#22263F] border border-gray-500 rounded-lg w-full max-w-[200px] transition-all  ease-out z-30 ${
         isShow
           ? "opacity-100 scale-100 duration-500"
-          : "opacity-0 scale-0 duration-500 translate-x-100"
+          : "opacity-0 scale-0 duration-500 translate-x-50"
       }`}
     >
       {weeks.map((day, index) => {

@@ -12,7 +12,7 @@ const FetchWeatherApi = () => {
     const fetchingData = async () => {
       try {
         const response = await fetch("/apiData/weather.json", {
-          signal: controller.signal, // ✅ link abort controller properly
+          signal: controller.signal, 
         });
 
         if (!response.ok) {

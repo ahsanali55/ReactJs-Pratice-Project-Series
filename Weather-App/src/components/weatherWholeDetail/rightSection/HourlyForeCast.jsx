@@ -1,19 +1,30 @@
-import React from "react";
+import React, { useContext } from "react";
+import { weatherContext } from "../../../store/WeatherStore";
 
 const HourlyForeCast = () => {
+  const { cityItem, defaultDay } = useContext(weatherContext);
+
+  
+
   return (
-    <div className="w-full space-y-4 mt-3 p-2  ">
+    <div className="w-full space-y-4  p-2  ">
       {/* items */}
-      <div className="flex items-center justify-between border bg-[#323753] border-gray-600  rounded-xl pl-2 pr-5">
-        <div className="flex items-center ">
-          <img src="/images/Cloudy.webp" className="w-18" alt="" loading="lazy" />
-          <h1 className="text-[22px] font-semibold">3 PM</h1>
+
+      {cityItem?.weekly?.[defaultDay]?.hourly.map((item, index) => {
+        return(
+        <div className="flex items-center justify-between border bg-[#323753] border-gray-600  rounded-lg pl-2 pr-5" key={index}>
+          <div className="flex items-center gap-2 duration-200 transition-all ">
+            <img
+              src={`/images/${item.condition}.webp`}
+              className="w-[53px]"
+              alt=""
+              loading="lazy"
+            />
+            <h1 className="text-[22px] font-semibold">{item.time}</h1>
+          </div>
+          <p className="text-[22px]">{item.temp}°</p>
         </div>
-        <p className="text-[22px]">68</p>
-      </div>
-
-     
-
+      )})}
     </div>
   );
 };

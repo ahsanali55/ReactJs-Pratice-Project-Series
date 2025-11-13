@@ -6,7 +6,7 @@ import { weatherContext } from "../../../store/WeatherStore";
 
 const LeftDetails = () => {
   return (
-    <div className="w-full max-w-[775px] z-0">
+    <div className="w-full max-w-[825px] z-0 grow ">
       <LeftTop />
       <LeftMiddle />
       <LeftBottom />

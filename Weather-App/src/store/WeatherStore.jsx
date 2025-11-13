@@ -42,32 +42,876 @@ const initialData = {
     wind: "8 km/h",
     precipitation: "0 mm",
     condition: "Partly Cloudy",
-    hourly: [
-      { time: "12 AM", temp: 20, condition: "Rain" },
-      { time: "1 AM", temp: 19, condition: "Rain" },
-      { time: "2 AM", temp: 19, condition: "Rain" },
-      { time: "3 AM", temp: 18, condition: "Rain" },
-      { time: "4 AM", temp: 18, condition: "Rain" },
-      { time: "5 AM", temp: 17, condition: "Rain" },
-      { time: "6 AM", temp: 18, condition: "Snow" },
-      { time: "7 AM", temp: 19, condition: "Fog" },
-      { time: "8 AM", temp: 21, condition: "Fog" },
-      { time: "9 AM", temp: 23, condition: "Fog" },
-      { time: "10 AM", temp: 24, condition: "Fog" },
-      { time: "11 AM", temp: 25, condition: "Fog" },
-      { time: "12 PM", temp: 26, condition: "Fog" },
-      { time: "1 PM", temp: 27, condition: "Fog" },
-      { time: "2 PM", temp: 27, condition: "Fog" },
-      { time: "3 PM", temp: 26, condition: "Fog" },
-      { time: "4 PM", temp: 25, condition: "Partly Cloudy" },
-      { time: "5 PM", temp: 24, condition: "Cloudy" },
-      { time: "6 PM", temp: 23, condition: "Cloudy" },
-      { time: "7 PM", temp: 22, condition: "Rain" },
-      { time: "8 PM", temp: 21, condition: "Rain" },
-      { time: "9 PM", temp: 21, condition: "Rain" },
-      { time: "10 PM", temp: 20, condition: "Rain" },
-      { time: "11 PM", temp: 20, condition: "Rain" },
-    ],
+    weekly: {
+        Monday: {
+          hourly: [
+            {
+              time: "12 AM",
+              "temp": 24,
+              "condition": "Partly Cloudy"
+            },
+            {
+              time: "1 AM",
+              "temp": 34,
+              "condition": "Rain"
+            },
+            {
+              time: "2 AM",
+              "temp": 25,
+              "condition": "Rain"
+            },
+            {
+              time: "3 AM",
+              "temp": 33,
+              "condition": "Rain"
+            },
+            {
+              time: "4 AM",
+              "temp": 28,
+              "condition": "Sunny"
+            },
+            {
+              time: "5 AM",
+              "temp": 29,
+              "condition": "Rain"
+            },
+            {
+              time: "6 AM",
+              "temp": 24,
+              "condition": "Cloudy"
+            },
+            {
+              time: "7 AM",
+              "temp": 25,
+              "condition": "Rain"
+            },
+            {
+              time: "8 AM",
+              "temp": 31,
+              "condition": "Sunny"
+            },
+            {
+              time: "9 AM",
+              "temp": 34,
+              "condition": "Clear"
+            },
+            {
+              time: "10 AM",
+              "temp": 31,
+              "condition": "Clear"
+            },
+            {
+              time: "11 AM",
+              "temp": 30,
+              "condition": "Sunny"
+            },
+            {
+              time: "12 PM",
+              "temp": 32,
+              "condition": "Sunny"
+            },
+            {
+              time: "1 PM",
+              "temp": 35,
+              "condition": "Sunny"
+            },
+            {
+              time: "2 PM",
+              "temp": 35,
+              "condition": "Partly Cloudy"
+            },
+            {
+              time: "3 PM",
+              "temp": 32,
+              "condition": "Sunny"
+            },
+            {
+              time: "4 PM",
+              "temp": 26,
+              "condition": "Partly Cloudy"
+            },
+            {
+              time: "5 PM",
+              "temp": 33,
+              "condition": "Sunny"
+            },
+            {
+              time: "6 PM",
+              "temp": 30,
+              "condition": "Rain"
+            },
+            {
+              time: "7 PM",
+              "temp": 33,
+              "condition": "Partly Cloudy"
+            },
+            {
+              time: "8 PM",
+              "temp": 36,
+              "condition": "Sunny"
+            },
+            {
+              time: "9 PM",
+              "temp": 30,
+              "condition": "Sunny"
+            },
+            {
+              time: "10 PM",
+              "temp": 26,
+              "condition": "Cloudy"
+            },
+            {
+              time: "11 PM",
+              "temp": 26,
+              "condition": "Clear"
+            }
+          ]
+        },
+        Tuesday: {
+          hourly: [
+            {
+              time: "12 AM",
+              "temp": 28,
+              "condition": "Cloudy"
+            },
+            {
+              time: "1 AM",
+              "temp": 35,
+              "condition": "Sunny"
+            },
+            {
+              time: "2 AM",
+              "temp": 27,
+              "condition": "Cloudy"
+            },
+            {
+              time: "3 AM",
+              "temp": 24,
+              "condition": "Cloudy"
+            },
+            {
+              time: "4 AM",
+              "temp": 25,
+              "condition": "Cloudy"
+            },
+            {
+              time: "5 AM",
+              "temp": 34,
+              "condition": "Rain"
+            },
+            {
+              time: "6 AM",
+              "temp": 26,
+              "condition": "Clear"
+            },
+            {
+              time: "7 AM",
+              "temp": 26,
+              "condition": "Cloudy"
+            },
+            {
+              time: "8 AM",
+              "temp": 28,
+              "condition": "Rain"
+            },
+            {
+              time: "9 AM",
+              "temp": 32,
+              "condition": "Sunny"
+            },
+            {
+              time: "10 AM",
+              "temp": 33,
+              "condition": "Sunny"
+            },
+            {
+              time: "11 AM",
+              "temp": 24,
+              "condition": "Rain"
+            },
+            {
+              time: "12 PM",
+              "temp": 24,
+              "condition": "Cloudy"
+            },
+            {
+              time: "1 PM",
+              "temp": 31,
+              "condition": "Cloudy"
+            },
+            {
+              time: "2 PM",
+              "temp": 31,
+              "condition": "Partly Cloudy"
+            },
+            {
+              time: "3 PM",
+              "temp": 32,
+              "condition": "Partly Cloudy"
+            },
+            {
+              time: "4 PM",
+              "temp": 25,
+              "condition": "Clear"
+            },
+            {
+              time: "5 PM",
+              "temp": 33,
+              "condition": "Cloudy"
+            },
+            {
+              time: "6 PM",
+              "temp": 36,
+              "condition": "Cloudy"
+            },
+            {
+              time: "7 PM",
+              "temp": 31,
+              "condition": "Partly Cloudy"
+            },
+            {
+              time: "8 PM",
+              "temp": 33,
+              "condition": "Sunny"
+            },
+            {
+              time: "9 PM",
+              "temp": 36,
+              "condition": "Rain"
+            },
+            {
+              time: "10 PM",
+              "temp": 33,
+              "condition": "Partly Cloudy"
+            },
+            {
+              time: "11 PM",
+              "temp": 30,
+              "condition": "Sunny"
+            }
+          ]
+        },
+        Wednesday: {
+          hourly: [
+            {
+              time: "12 AM",
+              "temp": 27,
+              "condition": "Clear"
+            },
+            {
+              time: "1 AM",
+              "temp": 35,
+              "condition": "Clear"
+            },
+            {
+              time: "2 AM",
+              "temp": 28,
+              "condition": "Rain"
+            },
+            {
+              time: "3 AM",
+              "temp": 26,
+              "condition": "Clear"
+            },
+            {
+              time: "4 AM",
+              "temp": 27,
+              "condition": "Cloudy"
+            },
+            {
+              time: "5 AM",
+              "temp": 26,
+              "condition": "Clear"
+            },
+            {
+              time: "6 AM",
+              "temp": 31,
+              "condition": "Rain"
+            },
+            {
+              time: "7 AM",
+              "temp": 29,
+              "condition": "Sunny"
+            },
+            {
+              time: "8 AM",
+              "temp": 30,
+              "condition": "Cloudy"
+            },
+            {
+              time: "9 AM",
+              "temp": 29,
+              "condition": "Sunny"
+            },
+            {
+              time: "10 AM",
+              "temp": 25,
+              "condition": "Partly Cloudy"
+            },
+            {
+              time: "11 AM",
+              "temp": 24,
+              "condition": "Partly Cloudy"
+            },
+            {
+              time: "12 PM",
+              "temp": 24,
+              "condition": "Rain"
+            },
+            {
+              time: "1 PM",
+              "temp": 30,
+              "condition": "Sunny"
+            },
+            {
+              time: "2 PM",
+              "temp": 32,
+              "condition": "Partly Cloudy"
+            },
+            {
+              time: "3 PM",
+              "temp": 32,
+              "condition": "Sunny"
+            },
+            {
+              time: "4 PM",
+              "temp": 29,
+              "condition": "Sunny"
+            },
+            {
+              time: "5 PM",
+              "temp": 25,
+              "condition": "Clear"
+            },
+            {
+              time: "6 PM",
+              "temp": 34,
+              "condition": "Rain"
+            },
+            {
+              time: "7 PM",
+              "temp": 29,
+              "condition": "Cloudy"
+            },
+            {
+              time: "8 PM",
+              "temp": 24,
+              "condition": "Cloudy"
+            },
+            {
+              time: "9 PM",
+              "temp": 33,
+              "condition": "Clear"
+            },
+            {
+              time: "10 PM",
+              "temp": 36,
+              "condition": "Cloudy"
+            },
+            {
+              time: "11 PM",
+              "temp": 30,
+              "condition": "Cloudy"
+            }
+          ]
+        },
+        Thursday: {
+          hourly: [
+            {
+              time: "12 AM",
+              "temp": 34,
+              "condition": "Rain"
+            },
+            {
+              time: "1 AM",
+              "temp": 27,
+              "condition": "Clear"
+            },
+            {
+              time: "2 AM",
+              "temp": 34,
+              "condition": "Clear"
+            },
+            {
+              time: "3 AM",
+              "temp": 34,
+              "condition": "Cloudy"
+            },
+            {
+              time: "4 AM",
+              "temp": 28,
+              "condition": "Cloudy"
+            },
+            {
+              time: "5 AM",
+              "temp": 24,
+              "condition": "Rain"
+            },
+            {
+              time: "6 AM",
+              "temp": 26,
+              "condition": "Clear"
+            },
+            {
+              time: "7 AM",
+              "temp": 34,
+              "condition": "Partly Cloudy"
+            },
+            {
+              time: "8 AM",
+              "temp": 25,
+              "condition": "Cloudy"
+            },
+            {
+              time: "9 AM",
+              "temp": 30,
+              "condition": "Cloudy"
+            },
+            {
+              time: "10 AM",
+              "temp": 30,
+              "condition": "Partly Cloudy"
+            },
+            {
+              time: "11 AM",
+              "temp": 28,
+              "condition": "Clear"
+            },
+            {
+              time: "12 PM",
+              "temp": 36,
+              "condition": "Partly Cloudy"
+            },
+            {
+              time: "1 PM",
+              "temp": 34,
+              "condition": "Cloudy"
+            },
+            {
+              time: "2 PM",
+              "temp": 29,
+              "condition": "Sunny"
+            },
+            {
+              time: "3 PM",
+              "temp": 28,
+              "condition": "Partly Cloudy"
+            },
+            {
+              time: "4 PM",
+              "temp": 29,
+              "condition": "Cloudy"
+            },
+            {
+              time: "5 PM",
+              "temp": 26,
+              "condition": "Rain"
+            },
+            {
+              time: "6 PM",
+              "temp": 26,
+              "condition": "Cloudy"
+            },
+            {
+              time: "7 PM",
+              "temp": 30,
+              "condition": "Sunny"
+            },
+            {
+              time: "8 PM",
+              "temp": 24,
+              "condition": "Cloudy"
+            },
+            {
+              time: "9 PM",
+              "temp": 28,
+              "condition": "Partly Cloudy"
+            },
+            {
+              time: "10 PM",
+              "temp": 31,
+              "condition": "Cloudy"
+            },
+            {
+              time: "11 PM",
+              "temp": 28,
+              "condition": "Partly Cloudy"
+            }
+          ]
+        },
+        Friday: {
+          hourly: [
+            {
+              time: "12 AM",
+              "temp": 29,
+              "condition": "Cloudy"
+            },
+            {
+              time: "1 AM",
+              "temp": 25,
+              "condition": "Rain"
+            },
+            {
+              time: "2 AM",
+              "temp": 36,
+              "condition": "Clear"
+            },
+            {
+              time: "3 AM",
+              "temp": 25,
+              "condition": "Rain"
+            },
+            {
+              time: "4 AM",
+              "temp": 29,
+              "condition": "Clear"
+            },
+            {
+              time: "5 AM",
+              "temp": 26,
+              "condition": "Clear"
+            },
+            {
+              time: "6 AM",
+              "temp": 35,
+              "condition": "Cloudy"
+            },
+            {
+              time: "7 AM",
+              "temp": 29,
+              "condition": "Partly Cloudy"
+            },
+            {
+              time: "8 AM",
+              "temp": 34,
+              "condition": "Clear"
+            },
+            {
+              time: "9 AM",
+              "temp": 36,
+              "condition": "Sunny"
+            },
+            {
+              time: "10 AM",
+              "temp": 27,
+              "condition": "Sunny"
+            },
+            {
+              time: "11 AM",
+              "temp": 27,
+              "condition": "Clear"
+            },
+            {
+              time: "12 PM",
+              "temp": 25,
+              "condition": "Partly Cloudy"
+            },
+            {
+              time: "1 PM",
+              "temp": 29,
+              "condition": "Clear"
+            },
+            {
+              time: "2 PM",
+              "temp": 28,
+              "condition": "Clear"
+            },
+            {
+              time: "3 PM",
+              "temp": 31,
+              "condition": "Cloudy"
+            },
+            {
+              time: "4 PM",
+              "temp": 26,
+              "condition": "Clear"
+            },
+            {
+              time: "5 PM",
+              "temp": 25,
+              "condition": "Sunny"
+            },
+            {
+              time: "6 PM",
+              "temp": 28,
+              "condition": "Cloudy"
+            },
+            {
+              time: "7 PM",
+              "temp": 35,
+              "condition": "Sunny"
+            },
+            {
+              time: "8 PM",
+              "temp": 34,
+              "condition": "Cloudy"
+            },
+            {
+              time: "9 PM",
+              "temp": 36,
+              "condition": "Sunny"
+            },
+            {
+              time: "10 PM",
+              "temp": 26,
+              "condition": "Partly Cloudy"
+            },
+            {
+              time: "11 PM",
+              "temp": 36,
+              "condition": "Sunny"
+            }
+          ]
+        },
+        Saturday: {
+          hourly: [
+            {
+              time: "12 AM",
+              "temp": 32,
+              "condition": "Partly Cloudy"
+            },
+            {
+              time: "1 AM",
+              "temp": 27,
+              "condition": "Clear"
+            },
+            {
+              time: "2 AM",
+              "temp": 36,
+              "condition": "Rain"
+            },
+            {
+              time: "3 AM",
+              "temp": 33,
+              "condition": "Partly Cloudy"
+            },
+            {
+              time: "4 AM",
+              "temp": 24,
+              "condition": "Clear"
+            },
+            {
+              time: "5 AM",
+              "temp": 28,
+              "condition": "Partly Cloudy"
+            },
+            {
+              time: "6 AM",
+              "temp": 36,
+              "condition": "Rain"
+            },
+            {
+              time: "7 AM",
+              "temp": 34,
+              "condition": "Clear"
+            },
+            {
+              time: "8 AM",
+              "temp": 34,
+              "condition": "Sunny"
+            },
+            {
+              time: "9 AM",
+              "temp": 24,
+              "condition": "Partly Cloudy"
+            },
+            {
+              time: "10 AM",
+              "temp": 35,
+              "condition": "Cloudy"
+            },
+            {
+              time: "11 AM",
+              "temp": 35,
+              "condition": "Sunny"
+            },
+            {
+              time: "12 PM",
+              "temp": 28,
+              "condition": "Clear"
+            },
+            {
+              time: "1 PM",
+              "temp": 31,
+              "condition": "Rain"
+            },
+            {
+              time: "2 PM",
+              "temp": 30,
+              "condition": "Sunny"
+            },
+            {
+              time: "3 PM",
+              "temp": 29,
+              "condition": "Rain"
+            },
+            {
+              time: "4 PM",
+              "temp": 27,
+              "condition": "Partly Cloudy"
+            },
+            {
+              time: "5 PM",
+              "temp": 29,
+              "condition": "Partly Cloudy"
+            },
+            {
+              time: "6 PM",
+              "temp": 36,
+              "condition": "Rain"
+            },
+            {
+              time: "7 PM",
+              "temp": 32,
+              "condition": "Cloudy"
+            },
+            {
+              time: "8 PM",
+              "temp": 34,
+              "condition": "Sunny"
+            },
+            {
+              time: "9 PM",
+              "temp": 28,
+              "condition": "Sunny"
+            },
+            {
+              time: "10 PM",
+              "temp": 32,
+              "condition": "Rain"
+            },
+            {
+              time: "11 PM",
+              "temp": 28,
+              "condition": "Cloudy"
+            }
+          ]
+        },
+        Sunday: {
+          hourly: [
+            {
+              time: "12 AM",
+              "temp": 32,
+              "condition": "Rain"
+            },
+            {
+              time: "1 AM",
+              "temp": 25,
+              "condition": "Rain"
+            },
+            {
+              time: "2 AM",
+              "temp": 32,
+              "condition": "Sunny"
+            },
+            {
+              time: "3 AM",
+              "temp": 35,
+              "condition": "Partly Cloudy"
+            },
+            {
+              time: "4 AM",
+              "temp": 25,
+              "condition": "Partly Cloudy"
+            },
+            {
+              time: "5 AM",
+              "temp": 34,
+              "condition": "Cloudy"
+            },
+            {
+              time: "6 AM",
+              "temp": 24,
+              "condition": "Cloudy"
+            },
+            {
+              time: "7 AM",
+              "temp": 29,
+              "condition": "Rain"
+            },
+            {
+              time: "8 AM",
+              "temp": 24,
+              "condition": "Cloudy"
+            },
+            {
+              time: "9 AM",
+              "temp": 36,
+              "condition": "Partly Cloudy"
+            },
+            {
+              time: "10 AM",
+              "temp": 36,
+              "condition": "Clear"
+            },
+            {
+              time: "11 AM",
+              "temp": 28,
+              "condition": "Rain"
+            },
+            {
+              time: "12 PM",
+              "temp": 24,
+              "condition": "Partly Cloudy"
+            },
+            {
+              time: "1 PM",
+              "temp": 35,
+              "condition": "Sunny"
+            },
+            {
+              time: "2 PM",
+              "temp": 29,
+              "condition": "Clear"
+            },
+            {
+              time: "3 PM",
+              "temp": 24,
+              "condition": "Clear"
+            },
+            {
+              time: "4 PM",
+              "temp": 34,
+              "condition": "Sunny"
+            },
+            {
+              time: "5 PM",
+              "temp": 31,
+              "condition": "Clear"
+            },
+            {
+              time: "6 PM",
+              "temp": 31,
+              "condition": "Clear"
+            },
+            {
+              time: "7 PM",
+              "temp": 25,
+              "condition": "Rain"
+            },
+            {
+              time: "8 PM",
+              "temp": 34,
+              "condition": "Sunny"
+            },
+            {
+              time: "9 PM",
+              "temp": 24,
+              "condition": "Clear"
+            },
+            {
+              time: "10 PM",
+              "temp": 35,
+              "condition": "Clear"
+            },
+            {
+              time: "11 PM",
+              "temp": 36,
+              "condition": "Cloudy"
+            }
+          ]
+        }
+      },
     daily: [
       { day: "Mon", high: 27, low: 18, condition: "Fog" },
       { day: "Tue", high: 28, low: 19, condition: "Fog" },
@@ -78,6 +922,8 @@ const initialData = {
       { day: "Sun", high: 28, low: 19, condition: "Fog" },
     ],
   },
+  
+  
 };
 
 const ReducerFunction = (state, action) => {
@@ -91,10 +937,11 @@ const ReducerFunction = (state, action) => {
         unitData: state.unitData,
         weeks: state.weeks,
         defaultDay: state.defaultDay,
-        isShow: !state.isShow,
+        // isShow: !state.isShow,
         city: state.payload,
         weatherApi: state.weatherApi,
         cityItem: state.cityItem,
+        cardTitle: state.cardTitle,
       };
     case "windowClick":
       console.log("Window Clicked");
@@ -103,10 +950,11 @@ const ReducerFunction = (state, action) => {
         isOpenDropDown: false,
         weeks: state.weeks,
         defaultDay: state.defaultDay,
-        isShow: !state.isShow,
+        // isShow: !state.isShow,
         city: state.payload,
         weatherApi: state.weatherApi,
         cityItem: state.cityItem,
+        cardTitle: state.cardTitle,
       };
     case "ChangeWeek":
       return {
@@ -118,6 +966,7 @@ const ReducerFunction = (state, action) => {
         city: state.payload,
         weatherApi: state.weatherApi,
         cityItem: state.cityItem,
+        cardTitle: state.cardTitle,
       };
     case "ShowWeeklyDropDown":
       return {
@@ -129,6 +978,7 @@ const ReducerFunction = (state, action) => {
         city: state.city,
         weatherApi: state.weatherApi,
         cityItem: state.cityItem,
+        cardTitle: state.cardTitle,
       };
     case "removeWindowWeeklyDropDown":
       // console.log( "removeWindowWeeklyDropDown")
@@ -141,6 +991,7 @@ const ReducerFunction = (state, action) => {
         city: state.city,
         weatherApi: state.weatherApi,
         cityItem: state.cityItem,
+        cardTitle: state.cardTitle,
       };
     case "searchCity":
       return {
@@ -152,6 +1003,7 @@ const ReducerFunction = (state, action) => {
         city: action.payload,
         weatherApi: state.weatherApi,
         cityItem: state.cityItem,
+        cardTitle: state.cardTitle,
       };
     case "WeatherApi":
       return {
@@ -163,6 +1015,7 @@ const ReducerFunction = (state, action) => {
         city: state.city,
         weatherApi: action.payload,
         cityItem: state.cityItem,
+        cardTitle: state.cardTitle,
       };
     case "CityItem":
       return {
@@ -174,6 +1027,7 @@ const ReducerFunction = (state, action) => {
         city: state.city,
         weatherApi: state.weatherApi,
         cityItem: action.payload,
+        cardTitle: state.cardTitle,
       };
 
     default:
@@ -196,6 +1050,7 @@ const WeatherStore = ({ children }) => {
         city: state.city,
         weatherApi: state.weatherApi,
         cityItem: state.cityItem,
+          cardTitle: state.cardTitle,
         dispatch,
       }}
     >

@@ -9,7 +9,7 @@ const TopHeader = () => {
     dispatch({ type: "ShowWeeklyDropDown" });
   };
   return (
-    <div className="flex items-center px-3 justify-between">
+    <div className="flex items-center pt-6 pb-3 px-3 justify-between sticky top-0 bg-[#22263F]" >
       <h1 className="font-semibold text-[22px] ">Hourly forecast</h1>
       <button
         onClick={handleShowWeeklyDropDown}

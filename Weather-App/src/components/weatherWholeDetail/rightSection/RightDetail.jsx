@@ -14,11 +14,13 @@ const RightDetail = () => {
   };
   return (
     <>
-      <div className="w-full  rounded-2xl bg-[#22263F] p-4 relative">
+
+       <div className="w-full max-w-[455px] rounded-2xl bg-[#22263F] px-4 relative h-[650px] overflow-y-auto overflow-x-hidden custom-scrollbar ">
         <TopHeader />
         <WeeklyDropdown />
         <HourlyForeCast />
       </div>
+
 
       {isShow && (
         <div
