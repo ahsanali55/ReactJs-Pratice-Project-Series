@@ -8,7 +8,7 @@ const LeftBottom = () => {
       <h1 className="my-4 text-xl font-semibold">Daily forecast</h1>
       <div className="grid grid-cols-3 lg:grid-cols-7 gap-4">
         {/* Cards */}
-        {cityItem?.daily.map((item, index) => {
+        {cityItem?.daily?.map((item, index) => {
           return (
             <div className="w-[100px] bg-[#22263F] px-2 py-3 rounded-lg" key={index}>
               <p className="text-center font-bold text-[18px]">{item.day}</p>

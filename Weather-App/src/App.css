@@ -4,6 +4,7 @@ body{
     font-family: "DM Sans", sans-serif;
     color: white;
     overflow-x: hidden;
+    width: 100%;
 }
 .custom-scrollbar{
     scrollbar-width: auto;       /* Firefox */
@@ -40,7 +41,7 @@ input:-webkit-autofill {
   /* 🚫 Removes Chrome’s autofill & selected text background */
   input:-webkit-autofill,
   input:-webkit-autofill:focus,
-  input:-webkit-autofill:hover,
+
   input:-webkit-autofill:active {
     -webkit-box-shadow: 0 0 0px 1000px #22263F inset !important;
     -webkit-text-fill-color: white !important;
@@ -62,5 +63,15 @@ input:-webkit-autofill {
     color: white !important;
   }
 }
-
+.animateSearchProgress{
+  animation: rotateSearch 2s linear  infinite ;
+}
+@keyframes rotateSearch {
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+     transform: rotate(360deg);
+  }
+}
 

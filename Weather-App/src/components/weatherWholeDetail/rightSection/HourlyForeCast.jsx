@@ -2,8 +2,8 @@ import React, { useContext } from "react";
 import { weatherContext } from "../../../store/WeatherStore";
 
 const HourlyForeCast = () => {
-  const { cityItem, defaultDay } = useContext(weatherContext);
-
+  const { cityItem, unitMenu, selected, unit , defaultDay } = useContext(weatherContext);
+   console.log(unitMenu, unit)
   
 
   return (
@@ -22,7 +22,7 @@ const HourlyForeCast = () => {
             />
             <h1 className="text-[22px] font-semibold">{item.time}</h1>
           </div>
-          <p className="text-[22px]">{item.temp}°</p>
+          <p className="text-[22px]">{[item.temp, unit]}</p>
         </div>
       )})}
     </div>
