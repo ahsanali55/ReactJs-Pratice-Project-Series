@@ -5,7 +5,6 @@ import { weatherContext } from "../../store/WeatherStore";
 const NavBar = () => {
   const { isOpenDropDown, dispatch } = useContext(weatherContext);
 
-  // console.log("Nav Render")
   const handleDropDown = (event) => {
     event.stopPropagation();
     dispatch({ type: "ToggleDropDown" });
@@ -13,7 +12,7 @@ const NavBar = () => {
 
   return (
     <header className="w-full ">
-      <nav className="w-10/12 max-w-[1280px] p-4 flex justify-between  mx-auto relative">
+      <nav className="w-11/12 max-w-[1280px]  py-4 lg:p-4 flex justify-between  mx-auto relative ">
         {/* Logo */}
         <div>
           <img src="/images/logo.svg" alt="Logo--" loading="lazy" />

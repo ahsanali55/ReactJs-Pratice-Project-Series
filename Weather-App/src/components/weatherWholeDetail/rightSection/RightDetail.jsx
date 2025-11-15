@@ -6,7 +6,6 @@ import TopHeader from "./TopHeader";
 
 const RightDetail = () => {
   const { dispatch, isShow } = useContext(weatherContext);
-  console.log("is Show:", isShow);
 
   
   const removeWindowWeeklyDropDown = (event) => {
@@ -15,19 +14,19 @@ const RightDetail = () => {
   return (
     <>
 
-       <div className="w-full max-w-[455px] rounded-2xl bg-[#22263F] px-4 relative h-[657px] overflow-y-auto overflow-x-hidden custom-scrollbar ">
+       <div className="w-full sm:max-w-[455px] rounded-2xl bg-[#22263F] px-4 relative h-[657px]  overflow-x-hidden custom-scrollbar z-50">
         <TopHeader />
         <WeeklyDropdown />
         <HourlyForeCast />
       </div>
 
 
-      {isShow && (
+      {isShow ? (
         <div
           className="w-full h-full z-20 absolute top-0"
           onClick={removeWindowWeeklyDropDown}
         ></div>
-      )}
+      ) : null}
     </>
   );
 };

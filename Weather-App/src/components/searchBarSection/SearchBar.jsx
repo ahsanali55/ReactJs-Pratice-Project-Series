@@ -3,12 +3,12 @@ import { weatherContext } from "../../store/WeatherStore";
 
 const SearchBar = () => {
   const searchCity = useRef(null);
+  
   const [search, setSearch] = useState(false);
-  const { dispatch } = useContext(weatherContext);
-
+  const { dispatch, cityItem } = useContext(weatherContext);
+  console.log()
   const handleSubmit = (event) => {
     event.preventDefault();
-    // console.log("searchCity ", searchCity.current.value);
     setSearch(true);
     setTimeout(() => {
       dispatch({ type: "searchCity", payload: searchCity.current.value });
@@ -21,8 +21,8 @@ const SearchBar = () => {
 
   return (
     <section className="w-full mb-4">
-      <div className="max-w-[1280px] w-10/12  mx-auto  p-0 lg:p-4 flex flex-col items-center relative space-y-6">
-        <h1 className="font-bold  font-serif text-[40px]">
+      <div className="max-w-[1280px] w-11/12  mx-auto   lg:p-4 flex flex-col items-center relative space-y-6">
+        <h1 className="font-bold max-w-[300px] sm:max-w-full text-center font-serif text-[50px]">
           How's the sky looking today?
         </h1>
        <div className="relative w-full lg:w-11/12 max-w-[520px] flex flex-col gap-4">
@@ -49,7 +49,7 @@ const SearchBar = () => {
         </form>
       { search ?  <div className="w-full bg-[#22263F] max-w-[410px] rounded-lg absolute top-16 z-10 flex gap-2 p-4 "> 
           <img src="/images/icon-loading.svg" className="animateSearchProgress opacity-60" alt="" /> 
-          <p className="opacity-60"> Search in Progress</p>
+          <p className="opacity-60">Search in Progress</p>
         </div> : null
         }
        </div>

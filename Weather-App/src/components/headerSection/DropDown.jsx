@@ -4,7 +4,6 @@ import { weatherContext } from "../../store/WeatherStore";
 const DropDown = () => {
   const { unitData, isOpenDropDown, unitMenu, unit, selected , weeks, dispatch } =
     useContext(weatherContext);
-  console.log("Drop down Render", weeks);
 
   const handleUnitItem = (unit, selected) => {
     dispatch({type: "SelectedUnit", payload: {unit, selected}});
@@ -12,10 +11,10 @@ const DropDown = () => {
 
   return (
     <div
-      className={`absolute  mr-4 top-17  w-1/2 max-w-[250px] border border-gray-500  bg-[#22263F] p-2  rounded-xl z-100 transition-all duration-700 delay-150 linear ease-in-out  ${
+      className={`absolute  mr-4 top-17  w-1/2 max-w-[250px] border border-gray-500  bg-[#22263F] p-2  rounded-xl z-100 transition-all duration-700 delay-150 linear ease-in-out dropDown ${
         isOpenDropDown
-          ? "opacity-100 translate-x-0 right-0"
-          : "opacity-0  -right-7/12 "
+          ? "opacity-100 translate-x-0 left-[198px] sm:left-[1014px]"
+          : "opacity-100 translate-x-0  left-[598px] sm:left-500"
       }`}
     >
       <h1 className="font-bold px-2">{unitMenu.title}</h1>

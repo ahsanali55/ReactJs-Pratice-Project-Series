@@ -2,9 +2,7 @@ import React, { use, useContext, useEffect } from "react";
 import { weatherContext } from "./WeatherStore";
 
 const FetchWeatherApi = () => {
-  const { dispatch } = useContext(weatherContext);
-  // console.log("datas ", datas)
-  
+  const { dispatch } = useContext(weatherContext);  
   
   useEffect(() => {
     const controller = new AbortController();
@@ -20,7 +18,6 @@ const FetchWeatherApi = () => {
         }
 
         const data = await response.json();
-        console.log("weather Api Fetch:", data);
         dispatch({ type: "WeatherApi", payload: data });
       } catch (error) {
         if (error.name === "AbortError") {
@@ -33,7 +30,7 @@ const FetchWeatherApi = () => {
     fetchingData();
 
     return () => {
-      console.log("Cleanup Function Called");
+      // console.log("Cleanup Function Called");
       controller.abort(); // ✅ clean abort
     };
   }, [dispatch]);

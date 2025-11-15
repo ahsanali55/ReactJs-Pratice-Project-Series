@@ -1,27 +1,24 @@
 import { useContext, useState } from "react";
 import "./App.css";
 import NavBar from "./components/headerSection/NavBar";
-import WeatherStore, { weatherContext } from "./store/WeatherStore";
 import SearchBar from "./components/searchBarSection/SearchBar";
 import WholeDetail from "./components/weatherWholeDetail/WholeDetail";
 import FetchWeatherApi from "./store/FetchWeatherApi";
-import Error from "./ErrorAndLoading/Error";
+import { weatherContext } from "./store/WeatherStore";
 
 function App() {
-  const getWeatherApiData = useContext(weatherContext);
-  console.log("Get: ", getWeatherApiData);
+   const { city, weatherApi, cityItem, dispatch } = useContext(weatherContext);
+   console.log("CityItem: ", cityItem )
   return (
-    <div className="w-full relative">
+    <div className="w-screen relative flex flex-col items-center overflow-x-hidden">
       <NavBar />
+    
+      {/* { cityItem?.match ? <> */}
       <FetchWeatherApi />
-      {getWeatherApiData ? (
-        <>
-          <SearchBar />
-          <WholeDetail />
-        </>
-      ) : (
-        <Error />
-      )}
+      <SearchBar />
+      <WholeDetail />
+      {/* </> :  "NoOne Place Matched!"} */}
+     
     </div>
   );
 }

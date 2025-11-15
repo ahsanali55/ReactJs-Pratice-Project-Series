@@ -3,14 +3,13 @@ import { weatherContext } from "../../../store/WeatherStore";
 
 const HourlyForeCast = () => {
   const { cityItem, unitMenu, selected, unit , defaultDay } = useContext(weatherContext);
-   console.log(unitMenu, unit)
   
 
   return (
     <div className="w-full space-y-4  p-2  ">
       {/* items */}
 
-      {cityItem?.weekly?.[defaultDay]?.hourly.map((item, index) => {
+      {cityItem?.item?.weekly?.[defaultDay]?.hourly.map((item, index) => {
         return(
         <div className="flex items-center justify-between border bg-[#323753] border-gray-600  rounded-lg pl-2 pr-5" key={index}>
           <div className="flex items-center gap-2 duration-200 transition-all ">

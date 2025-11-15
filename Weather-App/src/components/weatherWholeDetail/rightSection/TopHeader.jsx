@@ -5,7 +5,7 @@ const TopHeader = () => {
   const { defaultDay, dispatch } = useContext(weatherContext);
 
   const handleShowWeeklyDropDown = (event) => {
-    event.stopPropagation();
+
     dispatch({ type: "ShowWeeklyDropDown" });
   };
   return (
@@ -13,7 +13,7 @@ const TopHeader = () => {
       <h1 className="font-semibold text-[22px] ">Hourly forecast</h1>
       <button
         onClick={handleShowWeeklyDropDown}
-        className="flex gap-2 py-2 px-4 bg-[#323753] rounded-md hover:bg-[#67686b] transition-all ease-in-out duration-200 items-center"
+        className="flex gap-2 py-2 px-4 bg-[#323753] rounded-md hover:bg-[#67686b] cursor-pointer transition-all ease-in-out duration-200 items-center z-9999"
       >
         <p className="font-semibold">{defaultDay}</p>
         <img src="/images/icon-dropdown.svg" alt="" />

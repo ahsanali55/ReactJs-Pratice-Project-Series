@@ -16,7 +16,8 @@ const initialData = {
   defaultDay: "Tuesday",
   isShow: false,
   city: "Chakwal",
-  weatherApi: {
+  weatherApi: {},
+  defaultApi: {
     name: "Chakwal",
     date: "Monday, Nov 10, 2025",
     temperature: 25,
@@ -936,8 +937,6 @@ const initialData = {
 };
 
 const ReducerFunction = (state, action) => {
-  // console.log("Reducer")
-
   switch (action.type) {
     // Define case statements for different action types here
     case "ToggleDropDown":
@@ -948,15 +947,15 @@ const ReducerFunction = (state, action) => {
         weeks: state.weeks,
         defaultDay: state.defaultDay,
         // isShow: !state.isShow,
-        city: state.payload,
+        city: state.city,
+        defaultApi: state.defaultApi,
         weatherApi: state.weatherApi,
-         getWeatherApiData: state.getWeatherApiData,
+        getWeatherApiData: state.getWeatherApiData,
         cityItem: state.cityItem,
         cardTitle: state.cardTitle,
         unit: state.unit,
       };
     case "windowClick":
-      console.log("Window Clicked");
       return {
         unitMenu: state.unitMenu,
         unitData: state.unitData,
@@ -964,9 +963,10 @@ const ReducerFunction = (state, action) => {
         weeks: state.weeks,
         defaultDay: state.defaultDay,
         // isShow: !state.isShow,
-        city: state.payload,
+        city: state.city,
         weatherApi: state.weatherApi,
-         getWeatherApiData: state.getWeatherApiData,
+        defaultApi: state.defaultApi,
+        getWeatherApiData: state.getWeatherApiData,
         cityItem: state.cityItem,
         cardTitle: state.cardTitle,
         unit: state.unit,
@@ -979,9 +979,10 @@ const ReducerFunction = (state, action) => {
         weeks: state.weeks,
         defaultDay: action.payload,
         isShow: !state.isShow,
-        city: state.payload,
+        city: state.city,
         weatherApi: state.weatherApi,
-         getWeatherApiData: state.getWeatherApiData,
+        defaultApi: state.defaultApi,
+        getWeatherApiData: state.getWeatherApiData,
         cityItem: state.cityItem,
         cardTitle: state.cardTitle,
         unit: state.unit,
@@ -996,13 +997,13 @@ const ReducerFunction = (state, action) => {
         isShow: !state.isShow,
         city: state.city,
         weatherApi: state.weatherApi,
-         getWeatherApiData: state.getWeatherApiData,
+        defaultApi: state.defaultApi,
+        getWeatherApiData: state.getWeatherApiData,
         cityItem: state.cityItem,
         cardTitle: state.cardTitle,
         unit: state.unit,
       };
     case "removeWindowWeeklyDropDown":
-      
       return {
         unitMenu: state.unitMenu,
         unitData: state.unitData,
@@ -1012,7 +1013,8 @@ const ReducerFunction = (state, action) => {
         isShow: false,
         city: state.city,
         weatherApi: state.weatherApi,
-         getWeatherApiData: state.getWeatherApiData,
+        defaultApi: state.defaultApi,
+        getWeatherApiData: state.getWeatherApiData,
         cityItem: state.cityItem,
         cardTitle: state.cardTitle,
         unit: state.unit,
@@ -1027,7 +1029,8 @@ const ReducerFunction = (state, action) => {
         isShow: false,
         city: action.payload,
         weatherApi: state.weatherApi,
-         getWeatherApiData: state.getWeatherApiData,
+        defaultApi: state.defaultApi,
+        getWeatherApiData: state.getWeatherApiData,
         cityItem: state.cityItem,
         cardTitle: state.cardTitle,
         unit: state.unit,
@@ -1042,6 +1045,7 @@ const ReducerFunction = (state, action) => {
         isShow: false,
         city: state.city,
         weatherApi: action.payload,
+        defaultApi: state.defaultApi,
         getWeatherApiData: true,
         cityItem: state.cityItem,
         cardTitle: state.cardTitle,
@@ -1049,19 +1053,10 @@ const ReducerFunction = (state, action) => {
       };
     case "CityItem":
       return {
-        unitMenu: state.unitMenu,
-        unitData: state.unitData,
-        isOpenDropDown: state.isOpenDropDown,
-        weeks: state.weeks,
-        defaultDay: state.defaultDay,
-        isShow: false,
-        city: state.city,
-        weatherApi: state.weatherApi,
-         getWeatherApiData: state.getWeatherApiData,
+        ...state,
         cityItem: action.payload,
-        cardTitle: state.cardTitle,
-        unit: state.unit,
       };
+
     case "SelectedUnit":
       return {
         unitData: state.unitData,
@@ -1071,7 +1066,8 @@ const ReducerFunction = (state, action) => {
         isShow: false,
         city: state.city,
         weatherApi: state.weatherApi,
-         getWeatherApiData: state.getWeatherApiData,
+        defaultApi: state.defaultApi,
+        getWeatherApiData: state.getWeatherApiData,
         cityItem: state.cityItem,
         cardTitle: state.cardTitle,
         unit: action.payload.unit,
@@ -1099,7 +1095,30 @@ const ReducerFunction = (state, action) => {
 
 const WeatherStore = ({ children }) => {
   const [state, dispatch] = React.useReducer(ReducerFunction, initialData);
-  console.log("State, ", state);
+  console.log(state);
+
+  useEffect(() => {
+    if (state.weatherApi?.cities) {
+      const Cityitem = state.weatherApi?.cities.find((item) => {
+        console.log("Item Name: ", item.name);
+        return item.name === state.city;
+      });
+      console.log("CityItem: ", Cityitem);
+      if (Cityitem) {
+        dispatch({
+          type: "CityItem",
+          payload: { item: Cityitem, match: true },
+        });
+      } else {
+        dispatch({
+          type: "CityItem",
+          payload: { item: state.defaultApi, match: false },
+        });
+      }
+    }
+
+    return () => {};
+  }, [state.weatherApi, state.city, dispatch]);
 
   return (
     <weatherContext.Provider
@@ -1111,6 +1130,7 @@ const WeatherStore = ({ children }) => {
         isShow: state.isShow,
         city: state.city,
         weatherApi: state.weatherApi,
+        defaultApi: state.defaultApi,
         cityItem: state.cityItem,
         cardTitle: state.cardTitle,
         unitMenu: state.unitMenu,

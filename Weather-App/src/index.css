@@ -1,2 +1,78 @@
 @import "tailwindcss";
 
+
+body{
+    background-color: hsl(248, 85%, 13%);
+    font-family: "DM Sans", sans-serif;
+    color: white;
+    overflow-x: hidden;
+    width: 100%;
+}
+.custom-scrollbar{
+    scrollbar-width: auto;       /* Firefox */
+  scrollbar-color: #323753 #22263F; /* thumb track (Firefox) */
+}
+.custom-scrollbar::-webkit-scrollbar {
+  width: 16px;
+  height: 16px;
+}
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px #22263F inset !important; /* gray-800 */
+  -webkit-text-fill-color: white !important;
+  -webkit-border: none !important;
+
+}
+@layer base {
+  input {
+    background-color: #22263F !important;
+    color: white !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+  }
+
+  input:focus,
+  input:focus-visible,
+  input:active {
+    background-color: #22263F !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+  }
+
+  /* 🚫 Removes Chrome’s autofill & selected text background */
+  input:-webkit-autofill,
+  input:-webkit-autofill:focus,
+
+  input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0px 1000px #22263F inset !important;
+    -webkit-text-fill-color: white !important;
+    transition: background-color 5000s ease-in-out 0s !important;
+  }
+
+  /* 🚫 Removes weird outline when previously typed value is selected */
+  input:-internal-autofill-selected {
+    background-color: #22263F !important;
+    color: white !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+  }
+
+  /* Prevents text highlight from changing color */
+  input::selection {
+    background: #22263F !important;
+    color: white !important;
+  }
+}
+.animateSearchProgress{
+  animation: rotateSearch 2s linear  infinite ;
+}
+@keyframes rotateSearch {
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+     transform: rotate(360deg);
+  }
+}

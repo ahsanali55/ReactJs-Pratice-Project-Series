@@ -2,11 +2,12 @@ import React, { useContext } from "react";
 import { weatherContext } from "../../../store/WeatherStore";
 
 const WeeklyDropdown = () => {
-  const { weeks, dispatch, isShow } = useContext(weatherContext);
-  console.log("isShow from context:", isShow);
+  const { weeks, dispatch, defaultDay, isShow } = useContext(weatherContext);
 
   const handleWeek = (event) => {
+    event.stopPropagation();
     dispatch({ type: "ChangeWeek", payload: event.target.innerText });
+
   };
 
   return (
@@ -21,7 +22,7 @@ const WeeklyDropdown = () => {
         return (
           <h1
             key={index}
-            className="bg-[#22263F] p-2 hover:bg-[#3b4061] cursor-pointer text-[20px] rounded-lg"
+            className={`bg-[#22263F] p-2 hover:bg-[#3b4061] cursor-pointer text-[20px] rounded-lg ${(defaultDay === day) ? "bg-[#323753]" : null} `}
             onClick={handleWeek}
           >
             {day}
