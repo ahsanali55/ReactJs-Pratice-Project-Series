@@ -1,4 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
+/* @theme {
+  --font-sans: sans-serif "'JetBrains Mono', Consolas, 'Courier New', monospace";
+} */
+@theme {
+  --font-poppins: "Poppins", sans-serif;
+  --font-Urbanist: "Urbanist", sans-serif;
+}
+
 :root {
   font-family: "Urbanist", sans-serif;
   line-height: 1.5;

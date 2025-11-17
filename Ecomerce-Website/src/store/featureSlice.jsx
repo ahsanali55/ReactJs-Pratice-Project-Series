@@ -6,22 +6,22 @@ import { FaHeadphones } from "react-icons/fa";
 
 const initialState = [
     {
-        icon: "FaShippingFast" ,
+        icon: <FaShippingFast/> ,
         title: "Worldwide Shipping",
         flexsibility: "Order Above $100",
     },
     {
-        icon: "FaArrowsRotate" ,
+        icon: <FaArrowsRotate/> ,
         title: "Easy 30 Day Returns",
         flexsibility: "Back Returns in 7 Days",
     },
     {
-        icon: "FaHandHoldingDollar" ,
+        icon: <FaHandHoldingDollar/> ,
         title: "Money Back Guarantee",
         flexsibility: "Guarantee With In 30-Days",
     },
     {
-        icon: "FaHeadphones" ,
+        icon: <FaHeadphones/> ,
         title: "Easy Online Support",
         flexsibility: "24/7 Any Time Support",
     },
