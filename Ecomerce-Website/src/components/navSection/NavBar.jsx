@@ -1,6 +1,7 @@
 import React from "react";
 import { FaCartArrowDown } from "react-icons/fa6";
 import TopHeader from "./TopHeader";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
   return (
@@ -16,30 +17,30 @@ const NavBar = () => {
         <div className="flex items-center gap-8">
           {/* nav  */}
           <ul className="flex gap-8">
-            <a href="" className="group relative">
+            <Link to="/" className="group relative">
               <li className="font-bold cursor-pointer hover:text-[#535bf2]">
                 HOME
               </li>
               <span className="absolute left-0 -bottom-1 h-0.5 w-0 bg-[#535bf2] transition-all duration-300 group-hover:w-full"></span>
-            </a>
-            <a href="" className="group relative">
+            </Link>
+            <Link to="/about" className="group relative">
               <li className="font-bold cursor-pointer hover:text-[#535bf2]">
                 ABOUT
               </li>
               <span className="absolute left-0 -bottom-1 h-0.5 w-0 group-hover:w-full transition-all duration-300 bg-[#535bf2]"></span>
-            </a>
-            <a href="" className="group relative">
+            </Link>
+            <Link to="/product" className="group relative">
               <li className="font-bold cursor-pointer hover:text-[#535bf2]">
                 PRODUCTS
               </li>
               <span className="absolute left-0 -bottom-1 h-0.5 w-0 group-hover:w-full transition-all duration-300 bg-[#535bf2]"></span>
-            </a>
-            <a href="" className="group relative">
+            </Link>
+            <Link to="/contact" className="group relative">
               <li className="font-bold cursor-pointer hover:text-[#535bf2]">
                 CONTACTS
               </li>
               <span className="absolute left-0 -bottom-1 h-0.5 w-0 group-hover:w-full transition-all duration-300 bg-[#535bf2]"></span>
-            </a>
+            </Link>
           </ul>
           <button
             className="flex items-center gap-1 bg-[#2a2c30] pl-5 pr-7 rounded-md py-2.5 relative cursor-pointer hover:scale-105 duration-300

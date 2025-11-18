@@ -6,7 +6,7 @@ import { ProductAction } from "../../store/ProductSlice";
 
 const Products = () => {
   const {product}  = useSelector((state) => state);
-  console.log(product);
+  // console.log(product);
   const dispatch = useDispatch();
 
   const handleIncrement = (id) => {
@@ -21,6 +21,10 @@ const Products = () => {
     <div className="w-full  bg-inherit grid grid-cols-3 gap-5 my-20  justify-between">
       {product?.map((item, index) => (
         <div key={index}
+           data-aos="zoom-in"
+           data-aos-duration="1300"
+           data-aos-delay="0"
+           data-aos-easing="ease-out" 
           className="bg-white rounded-md shadow-xl
       shadow-gray-300 p-3 relative flex flex-col justify-between items-start gap-2"
         >

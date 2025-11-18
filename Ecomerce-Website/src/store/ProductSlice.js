@@ -5,7 +5,7 @@ const productSlice = createSlice({
   initialState: [],
   reducers: {
     fetchedData: (state, action) => {
-      console.log(action.payload);
+      // console.log(action.payload);
       return action.payload;
     },
     increment: (state, action) => {
