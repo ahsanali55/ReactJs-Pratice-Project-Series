@@ -3,6 +3,7 @@ import { FaCartArrowDown } from "react-icons/fa";
 import { FaStar } from "react-icons/fa6";
 import { useDispatch, useSelector } from "react-redux";
 import { ProductAction } from "../../store/ProductSlice";
+import { CartActions } from "../../store/cartSlice";
 
 const Products = () => {
   const {product}  = useSelector((state) => state);
@@ -16,7 +17,9 @@ const Products = () => {
   const handleDecrement = (id) => {
     dispatch(ProductAction.decrement(id))
   }
-
+  const handleCart = () => {
+    dispatch(CartActions.incrementCart())
+  }
   return (
     <div className="w-full  bg-inherit grid grid-cols-3 gap-5 my-20  justify-between">
       {product?.map((item, index) => (
@@ -71,7 +74,7 @@ const Products = () => {
               </button>
             </div>
           </div>
-          <button className="relative hover:scale-none mt-2 mb-5 border-2 border-black curser-pointer bg-[#292C30] flex gap-3  justify-between items-center max-w-[200px] rounded-md px-7 py-2 duration-200  hover:bg-white group hover:border-2 ">
+          <button className="relative hover:scale-none mt-2 mb-5 border-2 border-black curser-pointer bg-[#292C30] flex gap-3  justify-between items-center max-w-[200px] rounded-md px-7 py-2 duration-200  hover:bg-white group hover:border-2 "  onClick={handleCart}>
             <FaCartArrowDown className="text-white text-[20px] group-hover:text-black" />
             <h1 className="text-white text-[20px] group-hover:text-black">Add To Cart</h1>
           </button>

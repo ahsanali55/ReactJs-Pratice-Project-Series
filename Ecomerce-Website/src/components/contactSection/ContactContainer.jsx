@@ -5,7 +5,7 @@ import BottomContactForm from './BottomContactForm'
 const ContactContainer = () => {
   return (
     <div className='w-full '>
-      <div className='mx-auto border my-10 p-4 w-11/12 max-w-[1280px] flex flex-col gap-16'>
+      <div className='mx-auto p-4 w-11/12 max-w-[1280px] flex flex-col gap-8'>
       <TopContactHeading />
       <BottomContactForm />
       </div>

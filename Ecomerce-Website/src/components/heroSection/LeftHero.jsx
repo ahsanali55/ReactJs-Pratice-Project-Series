@@ -1,6 +1,7 @@
 import React from "react";
 import { RiArrowRightSLine } from "react-icons/ri";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 const LeftHero = () => {
   const heroValue = useSelector((state) => state.hero);
 
@@ -19,12 +20,12 @@ const LeftHero = () => {
       <p className="text-white">
        {heroValue.description}
       </p>
-      <a href="">
+      <Link to="/product">
         <button className="flex items-center text-white px-5 py-2 bg-[#2a2c30] rounded-md  cursor-pointer gap-2 duration-500 transition-all hover:scale-105 ">
          {heroValue.btnName}
           <RiArrowRightSLine className="" />
         </button>
-      </a>
+      </Link>
     </div>
   );
 };
