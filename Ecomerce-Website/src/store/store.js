@@ -7,6 +7,7 @@ import featureReducer from './featureSlice.jsx'
 import productReducer from './ProductSlice.js'
 import whyChooseReducer from './WhyChooseSlice.js'
 import footerReducer from './footerSlice.js'
+import localStorageReducer from './localStorageSlice.js'
 
 export const store = configureStore({
     reducer: {
@@ -18,6 +19,7 @@ export const store = configureStore({
         product: productReducer,
         whyChoose: whyChooseReducer,
         footer: footerReducer,
+        localStorage: localStorageReducer,
 
     }
 })

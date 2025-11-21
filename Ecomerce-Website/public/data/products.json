@@ -5,6 +5,7 @@
     "category": "Computers",
     "brand": "ExampleBrand",
     "price": 999.99,
+    "basePrice": 999.99,
     "orgPrice": 3999.96,
     "stock": 50,
     "description": "Powerful laptop with a quad-core i5 processor, 8GB RAM, 256GB SSD, and a 14-inch FHD display.",
@@ -18,6 +19,7 @@
     "category": "Mobiles",
     "brand": "TechGadget",
     "price": 499.99,
+    "basePrice": 499.99,
     "orgPrice": 1999.96,
     
     "stock": 100,
@@ -31,6 +33,7 @@
     "category": "Audio",
     "brand": "SoundBeats",
     "price": 149.99,
+    "basePrice": 149.99,
     "orgPrice": 599.96,
     
     "stock": 30,
@@ -44,6 +47,7 @@
     "category": "Wearables",
     "brand": "FitTech",
     "price": 199.99,
+    "basePrice": 199.99,
     "orgPrice": 799.96,
     
     "stock": 20,
@@ -57,6 +61,7 @@
     "category": "Audio",
     "brand": "SoundBeats",
     "price": 149.99,
+    "basePrice": 149.99,
     "orgPrice": 599.96,
     
     "stock": 30,
@@ -71,6 +76,7 @@
     "category": "Video",
     "brand": "Samsung",
     "price": 199.99,
+    "basePrice": 199.99,
     "orgPrice": 799.96,
     
     "stock": 20,

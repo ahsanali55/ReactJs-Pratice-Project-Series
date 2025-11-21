@@ -1,12 +1,14 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 
 const Summary = () => {
+  const {summarySubTotalPrice} = useSelector((state) => state.cart)
   return (
     <div className='w-full max-w-[300px] min-h-[250px] border-[3px] ml-auto flex flex-col justify-between px-5 py-7'>
       <h1 className='font-semibold tracking-wide text-lg'>Selected Offer Summary</h1>
       <div className='flex justify-between text-[16px]'>
         <h1 className='opacity-40'>Sub Total:</h1>
-        <h3>1148</h3>
+        <h3>{summarySubTotalPrice.toString().split(".")[0]}</h3>
       </div>
      <div>
          <div className='flex justify-between text-[16px]'>
@@ -18,7 +20,7 @@ const Summary = () => {
 
       <div className='flex justify-between text-[16px]'>
         <h1  className='opacity-40'>Final Total:</h1>
-        <h3>₹ 1198</h3>
+        <h3>₹ {(summarySubTotalPrice > 0)? (Number(summarySubTotalPrice.toString().split(".")[0]) + 50): 0}</h3>
       </div>
 
 

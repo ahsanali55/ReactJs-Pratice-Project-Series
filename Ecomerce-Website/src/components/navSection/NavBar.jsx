@@ -52,7 +52,7 @@ const NavBar = () => {
 
           >
             <FaCartArrowDown className="text-white text-[20px]" />
-            <sup className="text-white absolute top-3 right-3 font-bold">{cart.cartValue}</sup>
+            <sup className="text-white absolute top-3 right-3 font-bold">{cart.cartItem.length}</sup>
           </button>
          </Link>
         </div>
