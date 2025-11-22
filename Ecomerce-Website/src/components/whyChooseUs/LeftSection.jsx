@@ -8,7 +8,7 @@ const LeftSection = () => {
     AOS.init({ duration: 1000, easing: "ease-in-out",  });
   }, []);
   return (
-    <div className="max-w-[330px] " >
+    <div className="max-w-[330px] lg:order-1 md:order-1 " >
       {left.map((item, index) => (
         <div className="flex flex-col gap-3 pb-7" key={index} data-aos="zoom-in-up" data-aos-duration="1000" 
         data-aos-delay="0"

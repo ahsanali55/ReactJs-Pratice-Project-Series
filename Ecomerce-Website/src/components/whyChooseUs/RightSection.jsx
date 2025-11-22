@@ -9,7 +9,7 @@ const RightSection = () => {
       AOS.init({ duration: 1000, easing: "ease-in-out" });
     }, []);
   return (
-    <div className="max-w-[330px]">
+    <div className="max-w-[330px] order-2 lg:order-3">
       {right.map((item, index) => (
         <div
           key={index}

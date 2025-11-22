@@ -9,47 +9,48 @@ const MiddleSection = () => {
 
   return (
     <div
-      className="relative p-2"
+      className="relative p-2 order-3 lg:order-2 "
       data-aos="zoom-in-up"
       data-aos-duration="1000"
       data-aos-delay="0"
     >
       <svg
         className="absolute inset-0 w-full h-full  pointer-events-none opacity-30 animate2"
-        fill="none"
+        fill="none" viewBox="0 0 100 100"
       >
-        <rect
-          x="0"
-          y="0"
-          width="100%"
+        <circle
+          cx="50"
+          cy="50"
+          r="45"
+          width="100%" 
           height="100%"
           stroke="#98bdf5"
-          stroke-width="2"
-          stroke-dasharray="20 20"
+          strokeWidth="2"
+          strokeDasharray="20 20"
           //   6 = dash length, 8 = space
-          rx="500"
-          ry="500"
+          rx="400"
+          ry="400"
         />
       </svg>
       <div
         className="p-2  
-                       relative "
+      relative "
       >
         <svg
           className="absolute inset-0 w-full h-full animate pointer-events-none opacity-50"
           fill="none"
         >
           <rect
-            x="0"
+            x="10"
             y="0"
             width="100%"
             height="100%"
             stroke="#83b1f7"
-            stroke-width="2"
-            stroke-dasharray="16 14"
+            strokeWidth="2"
+            strokeDasharray="16 16"
             //   6 = dash length, 8 = space
-            rx="500"
-            ry="500"
+            rx="300"
+            ry="300"
           />
         </svg>
 

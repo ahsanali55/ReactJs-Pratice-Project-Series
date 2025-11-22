@@ -14,7 +14,12 @@ const ProductApiFetch = () => {
       try {
         const response = await axios.get("/data/products.json");
         // console.log("Data:", response.data);
-        dispatch(ProductAction.fetchedData(response.data))
+        setTimeout(() => {
+          
+          dispatch(ProductAction.fetchedData(response.data))
+          
+        }, 4000)
+
       } catch (err) {
         console.log("Error:", err);
       } finally {

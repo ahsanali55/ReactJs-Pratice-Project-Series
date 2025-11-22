@@ -2,7 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 
 const Summary = () => {
-  const {summarySubTotalPrice} = useSelector((state) => state.cart)
+  const summarySubTotalPrice = useSelector((state) => state?.cart.summarySubTotalPrice)
   return (
     <div className='w-full max-w-[300px] min-h-[250px] border-[3px] ml-auto flex flex-col justify-between px-5 py-7'>
       <h1 className='font-semibold tracking-wide text-lg'>Selected Offer Summary</h1>

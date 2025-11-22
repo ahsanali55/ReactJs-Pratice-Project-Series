@@ -10,7 +10,7 @@ const Feature = () => {
   console.log(featureValue);
 
   return (
-    <div className="w-full grid grid-cols-4  h-45">
+    <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4  h-45">
       {featureValue.map((item, index) => (
         <div
           className="flex items-center pl-7 gap-4 border-r-[0.09px] border-gray-50 bg-white rounded"

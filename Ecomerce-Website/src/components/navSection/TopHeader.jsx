@@ -4,7 +4,7 @@ const TopHeader = () => {
   return (
     <div className=" w-full bg-[#2a2c30]  ">
       {/* === Top header === */}
-      <div className="flex justify-between  w-11/12 max-w-[1280px] mx-auto p-4">
+      <div className="flex justify-between  w-11/12 max-w-[1080px] mx-auto p-4">
         <p className="text-white">
           Free shipping, 30-day return or refund guarantee.
         </p>

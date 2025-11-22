@@ -3,22 +3,25 @@ import { FaCartArrowDown } from "react-icons/fa6";
 import TopHeader from "./TopHeader";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { GiHamburgerMenu } from "react-icons/gi";
 
 const NavBar = () => {
   const cart = useSelector((state) => state.cart);
   return (
     <div className="w-full bg-white">
       {/* === Navbar === */}
-      <nav className="w-11/12  max-w-[1280px] flex justify-between  p-4 mx-auto">
+      <nav className="w-11/12  max-w-[1080px] flex justify-between items-center ] p-4 mx-auto">
+
         {/* === logo === */}
         <Link to="/">
-        <div className="p-0.5 border-4 flex ">
-          <h1 className="font-extrabold bg-black text-white px-2">AHSAN</h1>
-          <h1 className="font-extrabold px-2">STORE</h1>
-        </div>
+          <div className="p-0.5 border-4 flex ">
+            <h1 className="font-extrabold bg-black text-white px-2">AHSAN</h1>
+            <h1 className="font-extrabold px-2">STORE</h1>
+          </div>
         </Link>
+
         {/* === right section === */}
-        <div className="flex items-center gap-8">
+        <div className="md:flex items-center gap-8 hidden ">
           {/* nav  */}
           <ul className="flex gap-8">
             <Link to="/" className="group relative">
@@ -46,16 +49,18 @@ const NavBar = () => {
               <span className="absolute left-0 -bottom-1 h-0.5 w-0 group-hover:w-full transition-all duration-300 bg-[#535bf2]"></span>
             </Link>
           </ul>
-         <Link to="/add-to-cart">
-          <button
-            className="flex items-center gap-1 bg-[#2a2c30] pl-5 pr-7 rounded-md pb-2.5 pt-4 relative cursor-pointer hover:scale-105 duration-300"
-
-          >
-            <FaCartArrowDown className="text-white text-[20px]" />
-            <sup className="text-white absolute top-3 right-3 font-bold">{cart.cartItem.length}</sup>
-          </button>
-         </Link>
+          <Link to="/add-to-cart">
+            <button className="flex items-center gap-1 bg-[#2a2c30] pl-5 pr-7 rounded-md pb-2.5 pt-4 relative cursor-pointer hover:scale-105 duration-300">
+              <FaCartArrowDown className="text-white text-[20px]" />
+              <sup className="text-white absolute top-3 right-3 font-bold">
+                {cart.cartItem.length}
+              </sup>
+            </button>
+          </Link>
         </div>
+        {/* Hambuger Icon  */}
+        <GiHamburgerMenu className="md:hidden text-3xl" />
+
       </nav>
     </div>
   );
