@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 const RightFooter = () => {
   const footerValue = useSelector((state) => state.footer);
   return (
-    <div className="w-full grid grid-cols-2 md:grid-cols-3   justify-between ">
+    <div className="w-full grid grid-cols-2 md:grid-cols-3 mt-7 gap-4 md:gap-0 justify-between ">
       {
         <div className="space-y-4 text-white">
           <h1 className="text-xl font-semibold">

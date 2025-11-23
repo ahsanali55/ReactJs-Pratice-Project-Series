@@ -14,51 +14,33 @@ const MiddleSection = () => {
       data-aos-duration="1000"
       data-aos-delay="0"
     >
-      <svg
-        className="absolute inset-0 w-full h-full  pointer-events-none opacity-30 animate2"
-        fill="none" viewBox="0 0 100 100"
-      >
-        <circle
-          cx="50"
-          cy="50"
-          r="45"
-          width="100%" 
-          height="100%"
-          stroke="#98bdf5"
-          strokeWidth="2"
-          strokeDasharray="20 20"
-          //   6 = dash length, 8 = space
-          rx="400"
-          ry="400"
-        />
-      </svg>
+   
       <div
-        className="p-2  
-      relative "
+        className="p-2  max-w-[320px] min-h-[320px] relative "
       >
         <svg
-          className="absolute inset-0 w-full h-full animate pointer-events-none opacity-50"
+          className="absolute -top-[3px] hidden md:block -left-[3px] w-full h-full  animate pointer-events-none opacity-50"
           fill="none"
         >
           <rect
-            x="10"
+            x="0"
             y="0"
             width="100%"
             height="100%"
             stroke="#83b1f7"
-            strokeWidth="2"
-            strokeDasharray="16 16"
+            stroke-width="2"
+            stroke-dasharray="16 16"
             //   6 = dash length, 8 = space
-            rx="300"
-            ry="300"
+            rx="500"
+            ry="500"
           />
         </svg>
 
-        <div className="color-change-delay w-[450px] h-[450px] rounded-full  flex justify-center items-center relative border-4 border-gray-200">
+        <div className="color-change-delay md:w-[300px] md:h-[300px] rounded-full  flex justify-center items-center relative border-4 border-gray-200">
          
           <img
             src="/images/ecompost.png"
-            className=" h-[430px] w-[350px]"
+            className=" md:h-[290px] md:w-[250px]"
             alt=""
           />
         </div>

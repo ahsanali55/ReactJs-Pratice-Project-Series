@@ -4,7 +4,7 @@ import RightMapSection from './RightMapSection'
 
 const BottomContactForm = () => {
   return (
-    <div className='w-full  py-2 flex gap-16 items-start'>
+    <div className='w-full  py-2 flex flex-col lg:flex-row gap-16 items-start'>
       <LeftFormSection />
       <RightMapSection />
     </div>

@@ -39,7 +39,7 @@ const Products = () => {
 
 
   return (
-    <div className="w-full  bg-inherit grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 my-20  justify-between">
+    <div className="w-full  bg-inherit grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-8 md:my-15  justify-between">
       {product?.map((item, index) => (
         <div
           key={index}
@@ -53,8 +53,8 @@ const Products = () => {
           <span className=" bg-[#E9D6D6] py-0.5 px-2  tracking-wider rounded-2xl">
             {item?.category}
           </span>
-          <div className="h-[350px] flex items-center">
-            <img src={`/images/${item?.image}`} className="" alt="" />
+          <div className="h-[280px] md:h-[350px] flex items-center">
+            <img src={`/images/${item?.image}`} className="h-full w-full" alt="" />
           </div>
           <h1 className="text-3xl font-semibold ">{item?.name}</h1>
           <div className="flex gap-1 text-yellow-300 py-3">
@@ -97,7 +97,7 @@ const Products = () => {
               </button>
             </div>
           </div>
-          <div className="relative">
+          <div className="relative w-full">
         
               <button
                 key={index}
@@ -107,7 +107,7 @@ const Products = () => {
                   ? "bg-white text-black opacity-40"
                   : "bg-[#292C30] text-white"
               }
-              relative hover:scale-none mt-2 mb-5 border-2 border-black curser-pointer  flex gap-3  justify-between items-center max-w-[200px] rounded-md px-7 py-2 duration-200  hover:bg-white group hover:border-2 `}
+              relative hover:scale-none mt-2 mb-5 border-2 border-black curser-pointer w-full  flex gap-3 justify-center md:justify-between items-center md:max-w-[200px] rounded-md px-7 py-2 duration-200  hover:bg-white group hover:border-2 `}
                 onClick={() => handleCart(item)}
               >
                 <FaCartArrowDown className="text-inherit text-[20px] group-hover:text-black" />

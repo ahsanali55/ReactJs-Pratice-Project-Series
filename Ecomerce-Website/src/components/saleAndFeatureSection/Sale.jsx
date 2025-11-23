@@ -5,7 +5,7 @@ const Sale = () => {
   const saleValue = useSelector((state) => state.sale);
   //   console.log(saleValue);
   return (
-    <div className="w-full grid grid-cols-3 ">
+    <div className="w-full grid grid-cols-1  lg:grid-cols-3 gap-4 lg:gap-0 overflow-hidden">
       {saleValue.map((item, index) => (
         <div
           key={index}
@@ -21,7 +21,7 @@ const Sale = () => {
           </div>
           <img
             src={`/images/${item.image}`}
-            className="w-[185px] absolute right-5 top-16 h-[155px]  z-10"
+            className="w-[140px] h-[120px] md:w-[185px] absolute right-5 top-16 md:h-[155px]  z-10"
             alt=""
           />
           <div className="absolute -bottom-7 -right-17 w-[200px] h-[170px] bg-[#cfdbe29f] rounded-tl-full"></div>

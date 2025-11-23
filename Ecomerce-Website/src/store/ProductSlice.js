@@ -4,11 +4,13 @@ const productSlice = createSlice({
   name: "product",
   initialState: {
     stockFull: false,
+    isfetch: true,
     productItem: JSON.parse(localStorage?.getItem("products")) || [],
   },
   reducers: {
     fetchedData: (state, action) => {
       // console.log(action.payload);
+      state.isfetch = false;
       state.productItem = action.payload;
       localStorage.setItem("products", JSON.stringify(action.payload)); 
     },

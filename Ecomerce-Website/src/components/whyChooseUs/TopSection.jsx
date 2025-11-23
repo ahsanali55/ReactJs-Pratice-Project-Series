@@ -2,7 +2,7 @@ import React from 'react'
 
 const TopSection = () => {
   return (
-    <div className='my-4'>
+    <div className='mt-7 mb-4'>
           <h1 className="font-bold text-2xl">
             Why Choose{" "}
             <span className="font-bold text-2xl text-[#4850ee]">

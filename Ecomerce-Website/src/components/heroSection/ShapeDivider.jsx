@@ -2,7 +2,7 @@ import React from "react";
 
 const ShapeDivider = () => {
   return (
-    <div className="custom-shape-divider-bottom-1763294199  z-0">
+    <div className="custom-shape-divider-bottom-1763294199 hidden lg:block z-0">
       <svg
         data-name="Layer 1"
         xmlns="http://www.w3.org/2000/svg"

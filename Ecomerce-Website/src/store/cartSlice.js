@@ -58,33 +58,30 @@ const cartSlice = createSlice({
       }
     },
     incrementCartQuantity: (state, action) => {
-      //   console.log(action.payload);
-      if (action.payload.quantity < action.payload.stock){
-        localStorage.removeItem('alert_shown');
-      }
-
-      const updatedState = {
-
-        ...state,
-        stockFull: (action.payload.quantity < action.payload.stock) ? state.stockFull : !state.stockFull,
-        summarySubTotalPrice:
+   
+        const updatedState = {
+          
+          ...state,
+          stockFull: (action.payload.quantity < action.payload.stock) ? localStorage.removeItem('alert_shown') : !state.stockFull,
+          summarySubTotalPrice:
           action.payload.quantity < action.payload.stock
-            ? state.summarySubTotalPrice + action.payload.basePrice
-            : state.summarySubTotalPrice,
-        cartItem: state.cartItem.map((item) =>
+          ? state.summarySubTotalPrice + action.payload.basePrice
+          : state.summarySubTotalPrice,
+          cartItem: state.cartItem.map((item) =>
           item.id === action.payload.id && item.quantity < action.payload.stock
             ? {
               
-                ...item,
-                quantity: item.quantity + 1,
-                price: item.price + item.basePrice,                            
-              }
+              ...item,
+              quantity: item.quantity + 1,
+              price: item.price + item.basePrice,                            
+            }
             : item
-        ),
+          ),
       };
       localStorage.setItem('summary', JSON.stringify(updatedState.summarySubTotalPrice));
       localStorage.setItem("cartItems", JSON.stringify(updatedState.cartItem));
       return updatedState;
+    
     },
     decrementCartQuantity: (state, action) => {
       if (action.payload.quantity <= action.payload.stock){
@@ -92,7 +89,7 @@ const cartSlice = createSlice({
       }
       const updatedState = {
         ...state,
-        stockFull: (action.payload.quantity > action.payload.stock) && false,
+        stockFull: (action.payload.quantity > action.payload.stock) && false ,
         summarySubTotalPrice:
           action.payload.quantity > 1
             ? state.summarySubTotalPrice - action.payload.basePrice

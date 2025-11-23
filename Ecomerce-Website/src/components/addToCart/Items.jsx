@@ -32,46 +32,46 @@ const Items = () => {
   });
 
   return (
-    <div className="w-full ">
+    <div className={`w-full border ${(cartItem.length > 0) ? "border-gray-300 border-b-0" : "border-none"} sm:mt-4 `}>
       {cartItem?.map((item, index) => (
         <div
           key={index}
-          className="flex justify-between px-3 py-5 border border-gray-300 duration-300"
+          className="flex flex-col md:flex-row md:justify-evenly lg:justify-between px-3 py-5 border-b border-gray-300 duration-300"
         >
           {/* Left */}
-          <div className="flex items-center gap-7 ">
+          <div className="flex flex-col lg:flex-row items-center gap-3 lg:gap-7 ">
             <div className="bg-[#E9D6D6] rounded-3xl px-3 text-[13px] opacity-80">
               {item?.category}
             </div>
-            <img src={`/images/${item?.image}`} className="w-30" alt="" />
-            <h1 className="text-[22px] font-semibold text-[#292C30]">
+            <img src={`/images/${item?.image}`} className=" w-50 md:w-30" alt="" />
+            <h1 className="text-[30px] md:text-[22px] font-semibold text-[#292C30]">
               {item?.name}
             </h1>
           </div>
           {/* Right */}
-          <div className="flex items-center gap-7">
-            <h3 className="text-gray-500 mr-14">
+          <div className="flex flex-col lg:flex-row lg:items-center mt-4 md:mt-0 md:items-start items-center gap-7">
+            <h3 className="text-[20px] md:text-[18px]  text-gray-500 lg:mr-12">
               {item?.price.toString().split(".")[0]} $
             </h3>
             <div className="flex items-center">
               <button
-                className="border border-gray-300 rounded-l-lg px-10 py-2 font-semibold "
+                className="border border-gray-300 rounded-l-lg px-8 py-2 font-semibold "
                 onClick={() => handleCartIncrement(item)}
               >
                 +
               </button>
-              <h3 className="border border-gray-300 border-x-0  px-12 py-2 font-semibold">
+              <h3 className="border border-gray-300 border-x-0  px-10 py-2 font-semibold">
                 {item?.quantity}
               </h3>
               <button
-                className="border border-gray-300 rounded-r-lg px-10 py-2 font-semibold tracking-widest "
+                className="border border-gray-300 rounded-r-lg px-8 py-2 font-semibold tracking-widest "
                 onClick={() => handleCartDecrement(item)}
               >
                 -
               </button>
             </div>
             <button
-              className="border-2 text-white bg-[#292C30] hover:border-2 hover:border-[#292C30] hover:bg-white hover:text-[#292C30] duration-75 px-20 py-2 rounded-md"
+              className="border-2 text-white px-23 bg-[#292C30] hover:border-2 hover:border-[#292C30] hover:bg-white hover:text-[#292C30] duration-75 lg:px-15 py-2 rounded-md"
               onClick={() => handleRemove(item)}
             >
               Remove

@@ -10,15 +10,15 @@ const ProductApiFetch = () => {
   
     
   useEffect(() => {
+    const controller = new AbortController();
+
     const fetchData = async () => {
       try {
-        const response = await axios.get("/data/products.json");
+        const response = await axios.get("/data/products.json", {signal: controller.signal});
         // console.log("Data:", response.data);
-        setTimeout(() => {
-          
-          dispatch(ProductAction.fetchedData(response.data))
-          
-        }, 4000)
+         const Data = response.data;
+          dispatch(ProductAction.fetchedData(Data))
+        
 
       } catch (err) {
         console.log("Error:", err);
@@ -28,7 +28,12 @@ const ProductApiFetch = () => {
     };
 
     fetchData();
-  }, []);
+
+    return (() => {
+        controller.abort();
+    })
+
+  }, [dispatch]);
 
   return <></>;
 };

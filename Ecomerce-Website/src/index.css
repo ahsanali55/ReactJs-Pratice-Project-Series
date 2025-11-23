@@ -3,6 +3,7 @@
 /* @theme {
   --font-sans: sans-serif "'JetBrains Mono', Consolas, 'Courier New', monospace";
 } */
+
 @theme {
   --font-poppins: "Poppins", sans-serif;
   --font-Urbanist: "Urbanist", sans-serif;
@@ -31,10 +32,8 @@
   --supporting-color: #ebf3fe;
   --glow-color: hsl(186, 91%, 4%);
 }
-*{
-  /* font-family: "Urbanist", sans-serif; */
 
-}
+
 .custom-shape-divider-bottom-1763294199 {
     position: absolute;
     bottom: -1px;

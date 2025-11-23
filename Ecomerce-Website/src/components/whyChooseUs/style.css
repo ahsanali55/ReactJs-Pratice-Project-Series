@@ -2,17 +2,7 @@
 .animate{
     animation: moveClockWise 25s  linear infinite;
 }
-@keyframes moveClockWise {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
-.animate2{
-    animation: moveClockWise 40s  linear infinite;
-}
+
 @keyframes moveClockWise {
     from {
         transform: rotate(0deg);
@@ -37,6 +27,12 @@
 }
 
 .color-change-delay {
-  animation: color-change-after-2s 10s linear infinite;
+  animation: color-change-after-2s 5s linear infinite;
   
+}
+svg {
+  aspect-ratio: 1 / 1;
+}
+html, body{
+  overflow-x: hidden;
 }

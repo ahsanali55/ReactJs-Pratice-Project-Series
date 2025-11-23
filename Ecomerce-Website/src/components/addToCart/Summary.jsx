@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux'
 const Summary = () => {
   const summarySubTotalPrice = useSelector((state) => state?.cart.summarySubTotalPrice)
   return (
-    <div className='w-full max-w-[300px] min-h-[250px] border-[3px] ml-auto flex flex-col justify-between px-5 py-7'>
+    <div className='w-full md:max-w-[300px] min-h-[250px] border-[3px] my-4 ml-auto flex flex-col justify-between px-5 py-7'>
       <h1 className='font-semibold tracking-wide text-lg'>Selected Offer Summary</h1>
       <div className='flex justify-between text-[16px]'>
         <h1 className='opacity-40'>Sub Total:</h1>
