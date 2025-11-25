@@ -27,7 +27,7 @@ const NavBar = () => {
         {/* === right section === */}
         <RightNav />
         {/* Hambuger Icon  */}
-        <div className="w-full md:hidden  overflow-x-hidden ">
+        <div className="w-full md:hidden   ">
           <GiHamburgerMenu
             className=" text-3xl ml-auto"
             onClick={handleSidebar}

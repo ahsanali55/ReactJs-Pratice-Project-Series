@@ -23,7 +23,7 @@ const SideBar = () => {
   return (
     <>
          
-           <div className= {`absolute   w-[250px]  h-[400px]  bg-[#22263F]   z-9999 rounded-md py-3 px-4 flex flex-col gap-5 transition-all linear delay-150 ease-in-out  ${isShow ? "opacity-100 translate-x-0 top-29 left-[122px]  duration-700" : " opacity-100 translate-x-0  left-[800px] top-29  duration-700"} `}>
+           <div className= {`absolute   w-[250px]  h-[400px]  bg-[#22263F]   z-9999 rounded-md py-3 px-4 flex flex-col gap-5 transition-all linear delay-150 ease-in-out  ${isShow ? "opacity-100 translate-x-0 top-29 left-0  duration-700" : " opacity-100 translate-x-0  -left-[800px] top-29  duration-700"} `}>
         <div className='relative'>
           <MdCancel className='absolute right-0 text-2xl text-white' onClick={handleHideSidebar}/>
 

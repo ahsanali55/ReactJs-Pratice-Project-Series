@@ -16,7 +16,7 @@ const IsShow = () => {
       {isShow ? (
         <>
           <div
-            className="absolute  transition-all duration-1000 top-0 z-40 w-full h-full bg-gray-300 opacity-60"
+            className="fixed  transition-all duration-1000 top-0 z-40 w-full h-full bg-gray-300 opacity-60"
             onClick={handleHideSidebar}
           ></div>{" "}
         </>

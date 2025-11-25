@@ -50,8 +50,8 @@ const Items = () => {
           </div>
           {/* Right */}
           <div className="flex flex-col lg:flex-row lg:items-center mt-4 md:mt-0 md:items-start items-center gap-7">
-            <h3 className="text-[20px] md:text-[18px]  text-gray-500 lg:mr-12">
-              {item?.price.toString().split(".")[0]} $
+            <h3 className="text-[20px] md:text-[18px] lg:flex lg:space-x-2 text-gray-500 lg:mr-12">
+              <span>{item?.price.toString().split(".")[0]}</span> <span className="inline">$</span>
             </h3>
             <div className="flex items-center">
               <button

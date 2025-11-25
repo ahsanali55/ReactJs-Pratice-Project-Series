@@ -17,8 +17,8 @@ function App() {
     <>
       <ProductApiFetch />
 
-      {isShow? <IsShow/> : null}
       <Header />
+      {isShow? <IsShow/> : null}
   
       <Outlet />
       <Footer />
