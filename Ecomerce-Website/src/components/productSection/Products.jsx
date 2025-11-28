@@ -53,7 +53,7 @@ const Products = () => {
           <span className=" bg-[#E9D6D6] py-0.5 px-2  tracking-wider rounded-2xl">
             {item?.category}
           </span>
-          <div className="h-[280px] md:h-[350px] flex items-center">
+          <div className="h-[220px] md:h-[300px] flex items-center">
             <img src={`/images/${item?.image}`} className="h-full w-full" alt="" />
           </div>
           <h1 className="text-3xl font-semibold ">{item?.name}</h1>

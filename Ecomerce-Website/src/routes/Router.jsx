@@ -6,6 +6,7 @@ import Product from "./Product.jsx";
 import Contact from "./Contact.jsx";
 import { createBrowserRouter } from "react-router-dom";
 import Carts from './Carts.jsx';
+import SignIn from '../components/auth/SignIn.jsx';
 
 
     
@@ -19,9 +20,10 @@ const router = createBrowserRouter([
       {path: "/about", element: <About />},
       {path: "/product", element: <Product />},
       {path: "/contact", element: <Contact />},
-      {path: "/add-to-cart", element: <Carts />}
+      {path: "/add-to-cart", element: <Carts />},
     ],
   },
+  {path: "/signIn", element: <SignIn />}
 ])
 export default router;
   

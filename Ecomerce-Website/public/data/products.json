@@ -1,6 +1,21 @@
 [
   {
-    "id": 1,
+  "id": 1,
+  "name": "Apple AirPods",
+  "category": "Audio",
+  "brand": "Apple",
+  "price": 129.99,
+  "basePrice": 129.99,
+  "orgPrice": 519.96,
+  "stock": 60,
+  "description": "Apple AirPods with high-quality audio, seamless Bluetooth pairing, and long-lasting battery life.",
+  "image": "airpods.png",
+  "quantity": 1,
+  "addToCart": false,
+  "isStockFull": false
+},
+  {
+    "id": 2,
     "name": "Laptop",
     "category": "Computers",
     "brand": "ExampleBrand",
@@ -15,7 +30,7 @@
     "isStockFull": false
   },
   {
-    "id": 2,
+    "id": 3,
     "name": "Smartphone",
     "category": "Mobiles",
     "brand": "TechGadget",
@@ -32,7 +47,7 @@
 
   },
   {
-    "id": 3,
+    "id": 4,
     "name": "Wireless Headphones",
     "category": "Audio",
     "brand": "SoundBeats",
@@ -50,7 +65,7 @@
 
   },
   {
-    "id": 4,
+    "id": 5,
     "name": "Watches",
     "category": "Wearables",
     "brand": "FitTech",
@@ -67,7 +82,22 @@
 
   },
   {
-    "id": 5,
+  "id": 6,
+  "name": "Drone Camera",
+  "category": "Gadgets",
+  "brand": "SkyFly",
+  "price": 299.99,
+  "basePrice": 299.99,
+  "orgPrice": 1199.96,
+  "stock": 15,
+  "description": "High-performance drone with 4K camera, auto-stabilization, and 30-min flight time.",
+  "image": "drone.png",
+  "quantity": 1,
+  "addToCart": false,
+  "isStockFull": false
+},
+  {
+    "id": 7,
     "name": "Speakers",
     "category": "Audio",
     "brand": "SoundBeats",
@@ -85,7 +115,7 @@
     
   },
   {
-    "id": 6,
+    "id": 8,
     "name": "Television",
     "category": "Video",
     "brand": "Samsung",
@@ -100,5 +130,21 @@
         "addToCart": false,
     "isStockFull": false
 
-  }
+  },
+  {
+  "id": 9,
+  "name": "Gaming Keyboard",
+  "category": "Accessories",
+  "brand": "KeyPro",
+  "price": 89.99,
+  "basePrice": 89.99,
+  "orgPrice": 359.96,
+  "stock": 40,
+  "description": "Mechanical RGB gaming keyboard with blue switches and aluminum frame.",
+  "image": "keyboard.jpg",
+  "quantity": 1,
+  "addToCart": false,
+  "isStockFull": false
+}
+
 ]
