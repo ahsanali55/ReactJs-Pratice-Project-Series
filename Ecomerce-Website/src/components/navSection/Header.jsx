@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <>
       <header className="w-full sticky top-0 z-50 ">
-        <TopHeader />
+        
         <NavBar />
       </header>
     </>

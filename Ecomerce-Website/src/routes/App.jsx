@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Header from "../components/navSection/Header";
 import ProductApiFetch from "../components/ApiFetching/ProductApiFetch";
 import Footer from "../components/footer/Footer";
@@ -12,6 +12,7 @@ import { motion } from "framer-motion";
 import { onAuthStateChanged } from "firebase/auth";
 import { AuthActions } from "../store/authSlice";
 import { auth } from "../utils/firebase";
+import { ProfileActions } from "../store/profileSlice";
 
 function App() {
   const error = useSelector((state) => state.auth.error);
@@ -34,10 +35,15 @@ function App() {
     return children;
 }
 
+ 
+
   return (
     <AuthObserver>
       <ScrollToTop />
       <ProductApiFetch />
+    
+<div  className="w-screen h-screen">
+
       <Header />
 
       {isShow ? <IsShow /> : null}
@@ -48,11 +54,13 @@ function App() {
         animate={{ opacity: 1, scale: 1 }}
         exit={{ opacity: 0, scale: 0.9 }}
         transition={{ duration: 0.7, ease: "easeInOut" }}
-      >
+        >
         <Outlet />
       </motion.div>
 
       <Footer />
+          </div>
+  
     </AuthObserver>
   );
 }

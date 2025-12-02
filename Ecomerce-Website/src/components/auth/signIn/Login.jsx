@@ -2,6 +2,7 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import React, { useRef, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { auth } from "../../../utils/firebase";
+import { Link } from "react-router-dom";
 
 
 const Login = () => {
@@ -65,7 +66,7 @@ const Login = () => {
         </div>
 
         <button className="w-full bg-[#3497e9] text-white py-2 rounded-3xl mt-4 tracking-wider font-semibold ">
-          Login
+        <Link to="/profile">Login</Link> 
         </button>
       </form>
 

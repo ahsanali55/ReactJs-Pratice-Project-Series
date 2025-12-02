@@ -1,12 +1,37 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { FaCartArrowDown } from "react-icons/fa6";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import Profile from "../profileSection/ProfileWholeSection";
 import { CgProfile } from "react-icons/cg";
+import { RiArrowDropDownLine } from "react-icons/ri";
+import { ProfileActions } from "../../store/profileSlice";
 
 const RightNav = () => {
   const cart = useSelector((state) => state.cart);
+  const isDropDown = useSelector((state) => state.profile.isDropDown);
+  const dispatch = useDispatch();
+ 
+
+  const handleDropDown = () => {
+    dispatch(ProfileActions.toggleDropDown());
+  };
+
+  //  useEffect(() => {
+  //   // Define a function to handle clicks
+  //   const handleClick = () => {
+  //     dispatch(ProfileActions.toggleDropDown());
+  //   };
+
+  //   // Add event listener
+  //   window.addEventListener("click", handleClick);
+
+  //   // Cleanup
+  //   return () => {
+  //     window.removeEventListener("click", handleClick);
+  //   };
+  // }, [dispatch]);
+
   return (
     <div className="md:flex items-center z-10 gap-8 hidden ">
       {/* nav  */}
@@ -37,9 +62,27 @@ const RightNav = () => {
         </Link>
       </ul>
 
-      <Link to={"/profile"}>
+      <div
+        className="flex cursor-pointer relative group "
+        onClick={handleDropDown}
+      >
         <CgProfile className="text-3xl" />
-      </Link>
+        <RiArrowDropDownLine className="text-3xl" />
+        {isDropDown ? (
+          <div className={`absolute top-9 -left-17 overflow-hidden rounded-md max-w-[150px]  w-10/5 shadow-lg bg-[#2A2C30] text-white  ${isDropDown ? "opacity-100 transition-all duration-500" : "opacity-0 transition-all duration-500" }`}>
+            <Link to="/signIn">
+              <div className="hover:bg-[#414142] px-3 py-2 duration-200">
+                Login
+              </div>
+            </Link>
+            <Link to="/register">
+              <div className="hover:bg-[#414142] px-3 py-2 duration-200">
+                Register
+              </div>
+            </Link>
+          </div>
+        ) : null}
+      </div>
 
       <Link to="/add-to-cart">
         <button className="flex items-center gap-1 bg-[#2a2c30] pl-5 pr-7 rounded-md pb-2.5 pt-4 relative cursor-pointer hover:scale-105 duration-300">

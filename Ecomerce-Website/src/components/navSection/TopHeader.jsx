@@ -10,13 +10,13 @@ const TopHeader = () => {
           Free shipping, 30-day return or refund guarantee.
         </p>
         <div className="flex items-center gap-3 md:gap-10 hover:[#535bf2] ">
-          <Link to="/signIn">
+          <Link to="">
           <button className="text-white hover:text-[#535bf2] cursor-pointer text-[14px] lg:text-xl">
             SIGN IN
           </button>
           
           </Link>
-          <Link to="/signUp">
+          <Link to="">
           <button className="text-white hover:text-[#535bf2] cursor-pointer text-[14px] lg:text-xl">
             SIGN UP
           </button>

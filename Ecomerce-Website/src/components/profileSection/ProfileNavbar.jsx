@@ -9,7 +9,7 @@ const ProfileNavbar = () => {
       <div className=" flex justify-between items-center font-semibold w-11/12  mx-auto max-w-[1080px] p-4 ">
         <div className="flex items-center gap-7">
           <LeftNav />
-          <Link to="/add-to-cart">
+          <Link to="">
             <h1 className="font-bold text-xl underline">Cart</h1>
           </Link>
           <h1 className='font-bold text-xl underline'>Orders</h1>
