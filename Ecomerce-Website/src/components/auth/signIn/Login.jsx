@@ -66,7 +66,8 @@ const Login = () => {
         </div>
 
         <button className="w-full bg-[#3497e9] text-white py-2 rounded-3xl mt-4 tracking-wider font-semibold ">
-        <Link to="/profile">Login</Link> 
+        <Link to="/profile"></Link> 
+        <div>Login</div>
         </button>
       </form>
 

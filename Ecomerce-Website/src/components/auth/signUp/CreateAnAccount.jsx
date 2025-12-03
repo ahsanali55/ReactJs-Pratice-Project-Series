@@ -3,40 +3,32 @@ import { form } from "framer-motion/client";
 import React, { useRef, useState } from "react";
 import { FaCheck, FaEye, FaEyeSlash } from "react-icons/fa";
 import { auth } from "../../../utils/firebase";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { CreateAccActions } from "../../../store/CreateAccSlice";
 
 const CreateAnAccount = () => {
-    
   const [showPass, setshowPass] = useState(false);
   const [check, setCheck] = useState(false);
-  
+  const dispatch = useDispatch();
 
-  const name = useRef(null);
-  const email = useRef(null);
-  const password = useRef(null);
+  const name = useRef();
+  const email = useRef();
+  const password = useRef();
 
-  const handleSignUp = async (event) => {
+  const handleSignUp = (event) => {
     event.preventDefault();
     console.log(
       name.current.value,
       email.current.value,
       password.current.value
     );
-    if (!name.current.value || !email.current.value || !password.current.value) {
-      alert("Enter all fields");
-      return;
-    }
-    else{
-
-        try {
-            const cred = await createUserWithEmailAndPassword(auth, email.current.value, password.current.value);
-            await updateProfile(cred.user, { displayName: name.current.value });
-            alert("Account created! You are logged in.");
-        } catch (e) {
-            console.log(e.message);
-            
-        }
-    }
+    dispatch(
+      CreateAccActions.createAnAccount({
+        name: name.current.value,
+        email: email.current.value,
+        password: password.current.value,
+      })
+    );
   };
 
   return (

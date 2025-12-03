@@ -20,29 +20,31 @@ function App() {
   const dispatch = useDispatch();
   const location = useLocation();
 
-  function AuthObserver({ children }){
+  function AuthObserver({ children }) {
     useEffect(() => {
       const unsub = onAuthStateChanged(auth, (user) => {
         if (user) {
-          dispatch(AuthActions.setUser({uid: user.id, email: user.email, password: user.password, name: user.displayName || null}));
-        }
-        else{
+          dispatch(
+            AuthActions.setUser({
+              uid: user.uid,
+              email: user.email,
+              // password: user.password,
+              name: user.displayName || null,
+            })
+          );
+        } else {
           dispatch(AuthActions.clearUser());
         }
-      })
+      });
       return unsub;
     }, [dispatch]);
     return children;
-}
-
- 
+  }
 
   return (
     <AuthObserver>
       <ScrollToTop />
       <ProductApiFetch />
-    
-<div  className="w-screen h-screen">
 
       <Header />
 
@@ -54,13 +56,11 @@ function App() {
         animate={{ opacity: 1, scale: 1 }}
         exit={{ opacity: 0, scale: 0.9 }}
         transition={{ duration: 0.7, ease: "easeInOut" }}
-        >
+      >
         <Outlet />
       </motion.div>
 
       <Footer />
-          </div>
-  
     </AuthObserver>
   );
 }

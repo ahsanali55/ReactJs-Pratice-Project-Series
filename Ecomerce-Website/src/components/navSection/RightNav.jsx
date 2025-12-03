@@ -13,27 +13,32 @@ const RightNav = () => {
   const dispatch = useDispatch();
  
 
-  const handleDropDown = () => {
+  const handleDropDown = (e) => {
+    e.stopPropagation();
     dispatch(ProfileActions.toggleDropDown());
   };
 
-  //  useEffect(() => {
-  //   // Define a function to handle clicks
-  //   const handleClick = () => {
-  //     dispatch(ProfileActions.toggleDropDown());
-  //   };
+  const dropdownRef = useRef(null);
 
-  //   // Add event listener
-  //   window.addEventListener("click", handleClick);
-
-  //   // Cleanup
-  //   return () => {
-  //     window.removeEventListener("click", handleClick);
-  //   };
-  // }, [dispatch]);
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      // If click is outside the dropdown, close it
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        dispatch(ProfileActions.closeDropDown());
+      }
+    };
+    
+    window.addEventListener("click", handleClickOutside);
+    
+    return () => {
+      window.removeEventListener("click", handleClickOutside);
+    };
+  }, [dispatch]);
+  
+  console.log(dropdownRef)
 
   return (
-    <div className="md:flex items-center z-10 gap-8 hidden ">
+    <div className="md:flex items-center z-10 gap-8 hidden " >
       {/* nav  */}
       <ul className="flex gap-8">
         <Link to="/" className="group relative">
@@ -64,7 +69,7 @@ const RightNav = () => {
 
       <div
         className="flex cursor-pointer relative group "
-        onClick={handleDropDown}
+        onClick={handleDropDown} ref={dropdownRef}
       >
         <CgProfile className="text-3xl" />
         <RiArrowDropDownLine className="text-3xl" />

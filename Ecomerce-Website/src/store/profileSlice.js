@@ -9,7 +9,10 @@ const profileSlice = createSlice({
     reducers: {
         toggleDropDown: (state, action) => {
              state.isDropDown = ! state.isDropDown;
-        }
+        },
+        closeDropDown: (state, action) => { 
+            state.isDropDown = false; 
+        },
     }
 
 });
