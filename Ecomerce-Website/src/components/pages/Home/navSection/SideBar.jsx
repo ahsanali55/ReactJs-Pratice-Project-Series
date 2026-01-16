@@ -8,7 +8,7 @@ import { RiContactsFill } from "react-icons/ri";
 import { MdCancel } from "react-icons/md";
 
 import { Link } from "react-router-dom";
-import { NavbarActions } from "../../store/navSlice";
+import { NavbarActions } from "../../../../store/navSlice";
 import IsShow from "./IsShow";
 
 const SideBar = () => {

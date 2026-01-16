@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import Profile from "../profileSection/ProfileWholeSection";
 import { CgProfile } from "react-icons/cg";
 import { RiArrowDropDownLine } from "react-icons/ri";
-import { ProfileActions } from "../../store/profileSlice";
+import { ProfileActions } from "../../../../store/profileSlice";
 
 const RightNav = () => {
   const cart = useSelector((state) => state.cart);

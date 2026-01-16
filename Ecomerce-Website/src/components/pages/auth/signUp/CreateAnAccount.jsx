@@ -2,9 +2,9 @@ import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { form } from "framer-motion/client";
 import React, { useRef, useState } from "react";
 import { FaCheck, FaEye, FaEyeSlash } from "react-icons/fa";
-import { auth } from "../../../utils/firebase";
+import { auth } from "../../../../utils/firebaseConfig";
 import { useDispatch, useSelector } from "react-redux";
-import { CreateAccActions } from "../../../store/CreateAccSlice";
+import { CreateAccActions } from "../../../../store/CreateAccSlice";
 
 const CreateAnAccount = () => {
   const [showPass, setshowPass] = useState(false);

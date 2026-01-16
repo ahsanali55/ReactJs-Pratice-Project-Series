@@ -6,9 +6,9 @@ import Product from "./Product.jsx";
 import Contact from "./Contact.jsx";
 import { createBrowserRouter } from "react-router-dom";
 import Carts from './Carts.jsx';
-import Siginup from './Siginup.jsx';
 import Signin from './Signin.jsx';
 import Profilee from './Profilee.jsx';
+import Register from './Register.jsx'
 
 
     
@@ -26,7 +26,7 @@ const router = createBrowserRouter([
     ],
   },
   {path: "/signIn", element: <Signin />},
-  {path: "/register", element: <Siginup />},
+  {path: "/register", element: <Register />},
   {path: "/profile", element: <Profilee />}
 ])
 export default router;

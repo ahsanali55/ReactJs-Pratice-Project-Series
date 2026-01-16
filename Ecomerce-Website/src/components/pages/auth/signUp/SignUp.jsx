@@ -2,7 +2,7 @@ import React from "react";
 import { FaChevronLeft } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import CreateAnAccount from "./CreateAnAccount";
-import OtherSignIn from "../OtherSignIn";
+import OtherSignIn from "./OtherSignIn";
 import { AnimatePresence, motion } from "framer-motion";
 
 const SignUp = () => {

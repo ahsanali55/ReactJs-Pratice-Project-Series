@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { FaCartArrowDown } from "react-icons/fa";
 import { FaStar } from "react-icons/fa6";
 import { useDispatch, useSelector } from "react-redux";
-import { ProductAction } from "../../store/ProductSlice";
-import { CartActions } from "../../store/cartSlice";
+import { ProductAction } from "../../../../store/ProductSlice";
+import { CartActions } from "../../../../store/cartSlice";
 
 const Products = () => {
   const products = useSelector((state) => console.log(state));

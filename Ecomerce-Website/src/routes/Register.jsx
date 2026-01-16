@@ -1,5 +1,5 @@
 import React from "react";
-import SignUp from "../components/auth/signUp/SignUp";
+import SignUp from "../components/pages/auth/signUp/SignUp";
 import { AnimatePresence, motion } from "framer-motion";
 
 const Siginup = () => {

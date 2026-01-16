@@ -1,18 +1,16 @@
 import { useEffect, useRef, useState } from "react";
-import Header from "../components/navSection/Header";
-import ProductApiFetch from "../components/ApiFetching/ProductApiFetch";
-import Footer from "../components/footer/Footer";
+import Header from "../components/pages/Home/navSection/Header";
+import ProductApiFetch from "../components/pages/Home/ApiFetching/ProductApiFetch";
+import Footer from "../components/pages/Home/footer/Footer";
 import { Outlet, useLocation } from "react-router-dom";
-import SideBar from "../components/navSection/SideBar";
 import { useDispatch, useSelector } from "react-redux";
-import { NavbarActions } from "../store/navSlice";
-import IsShow from "../components/navSection/IsShow";
-import ScrollToTop from "../components/scrolltoTop/ScrollToTop";
+import IsShow from "../components/pages/Home/navSection/IsShow";
+import ScrollToTop from "../components/pages/Home/scrolltoTop/ScrollToTop";
 import { motion } from "framer-motion";
 import { onAuthStateChanged } from "firebase/auth";
 import { AuthActions } from "../store/authSlice";
-import { auth } from "../utils/firebase";
-import { ProfileActions } from "../store/profileSlice";
+
+import { auth } from "../utils/firebaseConfig";
 
 function App() {
   const error = useSelector((state) => state.auth.error);

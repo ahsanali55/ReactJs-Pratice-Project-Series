@@ -7,7 +7,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import SideBar from "./SideBar";
 import RightNav from "./RightNav";
 import LeftNav from "./LeftNav";
-import { NavbarActions } from "../../store/navSlice";
+import { NavbarActions } from "../../../../store/navSlice";
 
 const NavBar = () => {
   const cart = useSelector((state) => state.cart);

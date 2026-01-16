@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { CartActions } from "../../store/cartSlice";
-import { ProductAction } from "../../store/ProductSlice";
+import { CartActions } from "../../../../store/cartSlice";
+import { ProductAction } from "../../../../store/ProductSlice";
 
 const Items = () => {
   const { cartItem, stockFull } = useSelector((state) => state.cart);

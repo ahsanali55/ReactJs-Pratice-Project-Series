@@ -1,8 +1,8 @@
 import React from 'react'
-import HeroSection from '../components/heroSection/HeroSection'
-import SaleAndFeature from '../components/saleAndFeatureSection/SaleAndFeature'
-import ProductsContainer from '../components/productSection/ProductsContainer'
-import WhyChooseUs from '../components/whyChooseUs/WhyChooseUs'
+import HeroSection from '../components/pages/Home/heroSection/HeroSection'
+import SaleAndFeature from '../components/pages/Home/saleAndFeatureSection/SaleAndFeature'
+import ProductsContainer from '../components/pages/Home/productSection/ProductsContainer'
+import WhyChooseUs from '../components/pages/Home/whyChooseUs/WhyChooseUs'
 
 const Home = () => {
   return (

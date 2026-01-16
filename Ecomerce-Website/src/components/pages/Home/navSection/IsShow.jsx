@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { NavbarActions } from "../../store/navSlice";
+import { NavbarActions } from "../../../../store/navSlice";
 
 const IsShow = () => {
   const isShow = useSelector((state) => state.navbar.isShow);

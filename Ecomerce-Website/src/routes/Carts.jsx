@@ -1,5 +1,5 @@
 import React from 'react'
-import AddToCarts from '../components/addToCart/AddToCarts'
+import AddToCarts from '../components/pages/Home/addToCart/AddToCarts'
 
 const Carts = () => {
   return (

@@ -1,6 +1,6 @@
 import React from 'react'
-import SaleAndFeature from '../components/saleAndFeatureSection/SaleAndFeature'
-import WhyChooseUs from '../components/whyChooseUs/WhyChooseUs'
+import SaleAndFeature from '../components/pages/Home/saleAndFeatureSection/SaleAndFeature'
+import WhyChooseUs from '../components/pages/Home/whyChooseUs/WhyChooseUs'
 
 const About = () => {
   return (
