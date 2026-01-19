@@ -5,11 +5,15 @@ import { FaCheck, FaEye, FaEyeSlash } from "react-icons/fa";
 import { auth } from "../../../../utils/firebaseConfig";
 import { useDispatch, useSelector } from "react-redux";
 import { CreateAccActions } from "../../../../store/CreateAccSlice";
+import { AuthActions } from "../../../../store/authSlice";
+import { useNavigate } from "react-router-dom";
 
 const CreateAnAccount = () => {
   const [showPass, setshowPass] = useState(false);
   const [check, setCheck] = useState(false);
   const dispatch = useDispatch();
+  const user = useSelector((state) => state.auth.user);
+  const navigate = useNavigate();
 
   const name = useRef();
   const email = useRef();
@@ -29,6 +33,8 @@ const CreateAnAccount = () => {
         password: password.current.value,
       })
     );
+    dispatch(AuthActions.setUser({uid: user.uid, email: user.email}));
+    navigate('/');
   };
 
   return (

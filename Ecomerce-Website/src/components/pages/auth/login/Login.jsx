@@ -4,7 +4,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { auth } from "../../../../utils/firebaseConfig";
 import { FaChevronLeft } from "react-icons/fa";
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 
 
@@ -12,15 +12,17 @@ const Login = () => {
   const [showPass, setshowPass] = useState(false);
   const email = useRef(null);
   const password = useRef(null);
+  const navigate = useNavigate();
 
   const handleLogin = async (event) => {
     event.preventDefault();
     try{
       await signInWithEmailAndPassword(auth, email.current.value, password.current.value);
-      alert("Logged in");
+      alert("You have Successfully Logged In Now.");
+      navigate("/");
     }
     catch(err) {
-      console.log(err);
+      setError("Invalid credentials");
     }
   }
 
@@ -86,6 +88,11 @@ const Login = () => {
         <button className="w-full bg-[#3497e9] text-white py-2 rounded-3xl mt-4 tracking-wider font-semibold ">
         <Link to="/profile"></Link> 
         <div>Login</div>
+        </button>
+        <button className="w-full bg-black text-white py-2 rounded-3xl mt-4 tracking-wider font-semibold ">
+        <Link to="/register">
+        <div>Register</div>
+        </Link> 
         </button>
       </form>
 

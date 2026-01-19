@@ -2,16 +2,17 @@ import React, { useEffect, useRef, useState } from "react";
 import { FaCartArrowDown } from "react-icons/fa6";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import Profile from "../profileSection/ProfileWholeSection";
 import { CgProfile } from "react-icons/cg";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { ProfileActions } from "../../../../store/profileSlice";
+import { signOut } from "firebase/auth";
+import { auth } from "../../../../utils/firebaseConfig";
 
 const RightNav = () => {
   const cart = useSelector((state) => state.cart);
   const isDropDown = useSelector((state) => state.profile.isDropDown);
+  const user = useSelector((state) => state.auth.user);
   const dispatch = useDispatch();
- 
 
   const handleDropDown = (e) => {
     e.stopPropagation();
@@ -27,18 +28,21 @@ const RightNav = () => {
         dispatch(ProfileActions.closeDropDown());
       }
     };
-    
+
     window.addEventListener("click", handleClickOutside);
-    
+
     return () => {
       window.removeEventListener("click", handleClickOutside);
     };
   }, [dispatch]);
-  
-  console.log(dropdownRef)
+
+  const handleLogout = async() => {
+    await signOut(auth)
+  }
+
 
   return (
-    <div className="md:flex items-center z-10 gap-8 hidden " >
+    <div className="md:flex items-center z-10 gap-8 hidden ">
       {/* nav  */}
       <ul className="flex gap-8">
         <Link to="/" className="group relative">
@@ -69,22 +73,45 @@ const RightNav = () => {
 
       <div
         className="flex cursor-pointer relative group "
-        onClick={handleDropDown} ref={dropdownRef}
+        onClick={handleDropDown}
+        ref={dropdownRef}
       >
         <CgProfile className="text-3xl" />
         <RiArrowDropDownLine className="text-3xl" />
         {isDropDown ? (
-          <div className={`absolute top-9 -left-17 overflow-hidden rounded-md max-w-[150px]  w-10/5 shadow-lg bg-[#2A2C30] text-white  ${isDropDown ? "opacity-100 transition-all duration-500" : "opacity-0 transition-all duration-500" }`}>
-            <Link to="/signIn">
-              <div className="hover:bg-[#414142] px-3 py-2 duration-200">
-                Login
-              </div>
-            </Link>
-            <Link to="/register">
-              <div className="hover:bg-[#414142] px-3 py-2 duration-200">
-                Register
-              </div>
-            </Link>
+          <div
+            className={`absolute top-9 -left-17 overflow-hidden rounded-md max-w-[150px]  w-10/5 shadow-lg bg-[#2A2C30] text-white  ${isDropDown ? "opacity-100 transition-all duration-500" : "opacity-0 transition-all duration-500"}`}
+          >
+            {!user && (
+              <>
+                <Link to="/signIn">
+                  <div className="hover:bg-[#414142] px-3 py-2 duration-200">
+                    Login
+                  </div>
+                </Link>
+                <Link to="/register">
+                  <div className="hover:bg-[#414142] px-3 py-2 duration-200">
+                    Register
+                  </div>
+                </Link>
+              </>
+            )}
+            {
+              user && (
+                <>
+                <Link to="/signIn">
+                  <div className="hover:bg-[#414142] px-3 py-2 duration-200" onClick={handleLogout}>
+                    LogOut
+                  </div>
+                </Link>
+                <Link to="/profile">
+                  <div className="hover:bg-[#414142] px-3 py-2 duration-200" >
+                    Profile
+                  </div>
+                </Link>
+                </>
+              )
+            }
           </div>
         ) : null}
       </div>

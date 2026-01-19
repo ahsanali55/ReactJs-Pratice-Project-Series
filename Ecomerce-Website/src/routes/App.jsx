@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect } from "react";
 import Header from "../components/pages/Home/navSection/Header";
 import ProductApiFetch from "../components/pages/Home/ApiFetching/ProductApiFetch";
 import Footer from "../components/pages/Home/footer/Footer";
@@ -23,18 +23,15 @@ function App() {
       const unsub = onAuthStateChanged(auth, (user) => {
         if (user) {
           dispatch(
-            AuthActions.setUser({
-              uid: user.uid,
-              email: user.email,
-              // password: user.password,
-              name: user.displayName || null,
-            })
+            dispatch(AuthActions.setUser({uid: user.uid, email: user.email}))
           );
         } else {
-          dispatch(AuthActions.clearUser());
+          dispatch(AuthActions.logout());
+          dispatch(AuthActions.setUser(null));
+
         }
       });
-      return unsub;
+      return  () => unsub();
     }, [dispatch]);
     return children;
   }

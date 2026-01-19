@@ -4,13 +4,16 @@ import { FaStar } from "react-icons/fa6";
 import { useDispatch, useSelector } from "react-redux";
 import { ProductAction } from "../../../../store/ProductSlice";
 import { CartActions } from "../../../../store/cartSlice";
+import { useNavigate } from "react-router-dom";
 
 const Products = () => {
   const products = useSelector((state) => console.log(state));
   const product = useSelector((state) => state.product.productItem);
   const cartItem = useSelector((state) => state.cart.cartItem);
-
+  const user = useSelector((state) => state.auth.user);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
 
   const handleIncrement = (item) => {
     dispatch(ProductAction.increment(item));
@@ -20,8 +23,15 @@ const Products = () => {
     dispatch(ProductAction.decrement(item));
   };
   const handleCart = (item) => {
-    dispatch(CartActions.addToCArt(item));
-    dispatch(ProductAction.disableButtom(item));
+    if (!user){
+      navigate('/signIn')
+      alert("First you have to signIn then you can do add to cart")
+      return;
+    }
+    else{
+      dispatch(CartActions.addToCArt(item));
+      dispatch(ProductAction.disableButtom(item));
+    }
   };
 
   const stockFull = useSelector(state => state.product.stockFull);
@@ -53,7 +63,7 @@ const Products = () => {
           <span className=" bg-[#E9D6D6] py-0.5 px-2  tracking-wider rounded-2xl">
             {item?.category}
           </span>
-          <div className="h-[265px] md:h-[300px] flex items-center">
+          <div className="h-[255px] md:h-[300px] w-full flex items-center">
             <img src={`/images/${item?.image}`} className="h-full w-full" alt="" />
           </div>
           <h1 className="text-3xl font-semibold ">{item?.name}</h1>
@@ -101,13 +111,13 @@ const Products = () => {
         
               <button
                 key={index}
-                className={`
+                className={` 
               ${
                 (item?.addToCart) 
                   ? "bg-white text-black opacity-40"
                   : "bg-[#292C30] text-white"
               }
-              relative hover:scale-none mt-2 mb-5 border-2 border-black curser-pointer w-full  flex gap-3 justify-center md:justify-between items-center md:max-w-[200px] rounded-md px-7 py-2 duration-200  hover:bg-white group hover:border-2 `}
+              relative hover:scale-none mt-2 mb-5 border-2 border-black curser-pointer w-full  flex gap-3 justify-center md:justify-center items-center  rounded-md px-7 py-2 duration-200  hover:bg-white group hover:border-2 `}
                 onClick={() => handleCart(item)}
               >
                 <FaCartArrowDown className="text-inherit text-[20px] group-hover:text-black" />

@@ -8,11 +8,15 @@ const authSlice = createSlice({
             console.log(action.payload)
             state.user = action.payload;
             state.status = "succeed";
+            console.log("set User: ", state.user)
+            
         },
-        clearUser: (state, action) => {
+        logout: (state, action) => {
             state.user = null;
             state.status = 'idle';
-        }, 
+            console.log("Logout:", state.user)
+        },
+        
         setloading: (state, action) => {
             state.status = "loading";
         },

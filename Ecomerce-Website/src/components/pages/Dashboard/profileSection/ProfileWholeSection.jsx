@@ -1,10 +1,9 @@
 import React from "react";
-import LeftNav from "../navSection/LeftNav";
 import ProfileNavbar from "./ProfileNavbar";
 import Orders from "./orders/Orders";
 import { AnimatePresence, motion } from "framer-motion";
 
-const Profile = () => {
+const ProfileWholeSection = () => {
   return (
     <div className="w-full h-screen bg-[#F5F5F5]">
         <motion.div
@@ -20,4 +19,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default ProfileWholeSection;

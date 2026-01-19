@@ -1,10 +1,10 @@
 import React from "react";
-import Profile from "../components/pages/Home/profileSection/ProfileWholeSection";
+import ProfileWholeSection from "../components/pages/Dashboard/profileSection/ProfileWholeSection";
 
 const Profilee = () => {
   return (
     <>
-      <Profile />
+      <ProfileWholeSection />
     </>
   );
 };

@@ -6,7 +6,6 @@ import createAccReducer from './CreateAccSlice.js'
 import profileReducer from './profileSlice.js'
 import heroReducer from './heroSlice.js'
 import saleReducer from './SaleSlice.js'
-import featureReducer from './featureSlice.jsx'
 import productReducer from './ProductSlice.js'
 import whyChooseReducer from './WhyChooseSlice.js'
 import footerReducer from './footerSlice.js'
@@ -21,7 +20,6 @@ export const store = configureStore({
         profile: profileReducer,
         hero: heroReducer,
         sale: saleReducer,
-        feature: featureReducer, 
         product: productReducer,
         whyChoose: whyChooseReducer,
         footer: footerReducer,

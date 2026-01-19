@@ -28,8 +28,8 @@ const MiddleSection = () => {
             width="100%"
             height="100%"
             stroke="#83b1f7"
-            stroke-width="2"
-            stroke-dasharray="16 16"
+            strokeWidth="2"
+            strokeDasharray="16 16"
             //   6 = dash length, 8 = space
             rx="500"
             ry="500"
