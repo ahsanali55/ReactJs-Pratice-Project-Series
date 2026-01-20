@@ -1,46 +1,74 @@
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
-import { form } from "framer-motion/client";
 import React, { useRef, useState } from "react";
 import { FaCheck, FaEye, FaEyeSlash } from "react-icons/fa";
 import { auth } from "../../../../utils/firebaseConfig";
 import { useDispatch, useSelector } from "react-redux";
 import { CreateAccActions } from "../../../../store/CreateAccSlice";
-import { AuthActions } from "../../../../store/authSlice";
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
-const CreateAnAccount = () => {
+const CreateAnAccount = ({setOpen}) => {
   const [showPass, setshowPass] = useState(false);
-  const [check, setCheck] = useState(false);
+  const [checkbox, setCheck] = useState(false);
+  const { isCreated, loading } = useSelector((state) => state.createAcc);
   const dispatch = useDispatch();
-  const user = useSelector((state) => state.auth.user);
   const navigate = useNavigate();
 
   const name = useRef();
   const email = useRef();
   const password = useRef();
 
+  // Create Account Here
+  const handleCreateAccount = async (formData) => {
+    console.log("Data inside handleCreateAccount function, ", formData)
+    dispatch(CreateAccActions.createAnAccountStart()); // loading start
+
+    try {
+      const cred = await createUserWithEmailAndPassword(
+        auth,
+        formData.email,
+        formData.password,
+      );
+
+      await updateProfile(cred.user, {
+        displayName: formData.name,
+      });
+
+      dispatch(CreateAccActions.createAnAccountSuccess()); // Created
+      dispatch(CreateAccActions.afterNavigation()); // false for next creation otherwise back to home 
+    } catch (err) {
+      console.log(err.message);
+      dispatch(CreateAccActions.createAnAccountFail()); // loading stop
+    }
+  };
+  
+  useEffect(() => {
+    if (isCreated === true) {
+      navigate("/");
+    }
+
+    return () => {};
+  }, [isCreated]);
+
   const handleSignUp = (event) => {
     event.preventDefault();
+    setOpen(true)
     console.log(
       name.current.value,
       email.current.value,
-      password.current.value
+      password.current.value,
     );
-    dispatch(
-      CreateAccActions.createAnAccount({
-        name: name.current.value,
-        email: email.current.value,
-        password: password.current.value,
-      })
+    handleCreateAccount(
+      {name: name.current.value,
+      email: email.current.value,
+      password: password.current.value,}
     );
-    dispatch(AuthActions.setUser({uid: user.uid, email: user.email}));
-    navigate('/');
   };
 
   return (
     <form
       className="flex flex-col gap-2.5  mt-5 p-4"
-      onSubmit={(e) => handleSignUp(e)}
+      onSubmit={(event) => handleSignUp(event)}
     >
       <label htmlFor="name" className="font-semibold text-gray-700">
         Name
@@ -89,16 +117,18 @@ const CreateAnAccount = () => {
       <div className="flex gap-2">
         <div
           className="bg-[#eff2f8] w-6 flex items-center justify-center"
-          onClick={() => setCheck(!check)}
+          onClick={() => setCheck(!checkbox)}
         >
-          {check && <FaCheck className="text-[10px] text-gray-500" />}
+          {checkbox && <FaCheck className="text-[10px] text-gray-500" />}
         </div>
         <p className="">
           I agree to the <span className="text-[#3497e9]">Terms of Sevice</span>
         </p>
       </div>
 
-      <button className="w-full bg-[#3497e9] text-white py-2 rounded-3xl mt-5 tracking-wider font-semibold ">
+      <button 
+      
+      className="w-full bg-[#3497e9] text-white py-2 rounded-3xl mt-5 tracking-wider font-semibold ">
         Create An Account
       </button>
     </form>

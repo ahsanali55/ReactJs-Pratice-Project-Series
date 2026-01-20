@@ -1,12 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaChevronLeft } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import CreateAnAccount from "./CreateAnAccount";
 import OtherSignIn from "./OtherSignIn";
 import { AnimatePresence, motion } from "framer-motion";
+import Backdrop from "@mui/material/Backdrop";
+import CircularProgress from "@mui/material/CircularProgress";
 
 const SignUp = () => {
+  const [open, setOpen] = useState(false);
+  
+  const handleClose = () => setOpen(false);
   return (
+    <>
     <div className="w-full h-full bg-[#E8ECF4]">
       <motion.div
         initial={{ opacity: 0, x: 90 }}
@@ -25,13 +31,21 @@ const SignUp = () => {
             <h1 className="text-center mt-7 font-semibold text-2xl">
               Create An Account?
             </h1>
-
-            <CreateAnAccount />
+            
+            <CreateAnAccount setOpen={setOpen} />
             <OtherSignIn />
           </div>
         </div>
       </motion.div>
     </div>
+    <Backdrop
+      sx={(theme) => ({ color: '#fff', zIndex: theme.zIndex.drawer + 1 })}
+      open={open}
+      onClick={handleClose}
+      >
+      <CircularProgress color="#535BF2" />
+    </Backdrop>
+      </>
   );
 };
 

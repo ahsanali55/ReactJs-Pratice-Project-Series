@@ -1,25 +1,23 @@
 import React, { useEffect } from "react";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
-import { ProductAction } from "../../../../store/ProductSlice";
-
+import { ProductAction } from "../../store/ProductSlice";
 
 const ProductApiFetch = () => {
-    const dispatch = useDispatch();
-    // console.log(dispatch)
-  
-    
+  const dispatch = useDispatch();
+  // console.log(dispatch)
+
   useEffect(() => {
     const controller = new AbortController();
 
     const fetchData = async () => {
       try {
-        const response = await axios.get("/data/products.json", {signal: controller.signal});
+        const response = await axios.get("/data/products.json", {
+          signal: controller.signal,
+        });
         // console.log("Data:", response.data);
-         const Data = response.data;
-          dispatch(ProductAction.fetchedData(Data))
-        
-
+        const Data = response.data;
+        dispatch(ProductAction.fetchedData(Data));
       } catch (err) {
         console.log("Error:", err);
       } finally {
@@ -29,10 +27,9 @@ const ProductApiFetch = () => {
 
     fetchData();
 
-    return (() => {
-        controller.abort();
-    })
-
+    return () => {
+      controller.abort();
+    };
   }, [dispatch]);
 
   return <></>;

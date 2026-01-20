@@ -40,6 +40,7 @@ const RightNav = () => {
     await signOut(auth)
   }
 
+  
 
   return (
     <div className="md:flex items-center z-10 gap-8 hidden ">

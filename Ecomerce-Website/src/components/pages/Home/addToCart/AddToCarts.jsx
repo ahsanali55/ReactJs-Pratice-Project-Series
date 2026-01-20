@@ -1,6 +1,7 @@
 import React from "react";
 import Items from "./Items";
 import Summary from "./Summary";
+import { useLoader } from "../../Toploader/LoaderContext";
 
 const AddToCarts = () => {
   return (
